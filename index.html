@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fa">
+  <meta name="description" content="Palm Cooling 기술과 테니스 적용 가능성, 서울오픈 파트너십 제안 요약">
+  <title>Palm Cooling × Seoul Open</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #3182f6;
+      --blue-dark: #1765d1;
+      --blue-soft: #eaf3ff;
+      --ink: #191f28;
+      --muted: #697586;
+      --line: #e7ebf0;
+      --surface: #fff;
+      --canvas: #f5f7fa;
+      --green: #00a878;
+      --radius: 22px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(100% - 36px, 960px); margin-inline: auto; }
+    .topbar { position: sticky; z-index: 5; top: 0; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .topbar-inner { height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 800; letter-spacing: -.03em; white-space: nowrap; }
+    .brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 10px; color: #fff; background: var(--blue); }
+    .nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; color: #657080; font-size: 12px; font-weight: 650; white-space: nowrap; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a:hover, .nav a:focus-visible { color: var(--blue-dark); }
+    main { padding: 22px 0 64px; }
+    section { margin-top: 18px; scroll-margin-top: 78px; }
+    .hero { position: relative; overflow: hidden; padding: clamp(25px, 6vw, 52px); background: var(--surface); border: 1px solid var(--line); border-radius: 28px; }
+    .hero::after { content: ""; position: absolute; width: 270px; height: 270px; right: -100px; top: -105px; border-radius: 50%; background: radial-gradient(circle, #eaf3ff 0%, #f5f9ff 52%, transparent 70%); pointer-events: none; }
+    .eyebrow { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px; color: var(--blue-dark); background: var(--blue-soft); padding: 6px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+    h1 { position: relative; z-index: 1; margin: 17px 0 10px; max-width: 680px; font-size: clamp(30px, 6.5vw, 52px); line-height: 1.16; letter-spacing: -.055em; }
+    h1 span { color: var(--blue); }
+    .lead { position: relative; z-index: 1; margin: 0; max-width: 650px; color: var(--muted); font-size: clamp(14px, 2.2vw, 17px); word-break: keep-all; }
+    .hero-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-top: 27px; }
+    .date { color: #8792a0; font-size: 11px; }
+    .cta { display: inline-flex; align-items: center; gap: 7px; color: white; background: var(--blue); padding: 11px 15px; border-radius: 12px; font-size: 13px; font-weight: 750; box-shadow: 0 5px 12px #3182f626; }
+    .cta:hover { background: var(--blue-dark); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin: 30px 2px 13px; }
+    .section-head h2 { margin: 0; font-size: 21px; letter-spacing: -.045em; line-height: 1.25; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 12px; }
+    .card { min-width: 0; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+    .grid { display: grid; gap: 12px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .summary-card { padding: 18px; }
+    .summary-card .icon, .icon { display: grid; width: 39px; height: 39px; place-items: center; color: var(--blue); background: var(--blue-soft); border-radius: 13px; }
+    .summary-card h3, .card h3 { margin: 12px 0 5px; font-size: 15px; letter-spacing: -.025em; }
+    .summary-card p, .card p { margin: 0; color: var(--muted); font-size: 13px; word-break: keep-all; }
+    .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch; gap: 8px; }
+    .flow-step { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 112px; padding: 14px 8px; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 17px; }
+    .flow-step:not(:last-child)::after { content: "›"; position: absolute; z-index: 1; right: -12px; top: 39px; display: grid; width: 20px; height: 25px; place-items: center; color: #9aa4b2; background: var(--canvas); font-size: 22px; font-weight: 400; }
+    .flow-step .icon { width: 34px; height: 34px; border-radius: 11px; }
+    .flow-step strong { font-size: 12px; line-height: 1.35; }
+    .flow-step small { color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .callout { padding: 17px 19px; background: #edf8f5; border: 1px solid #d9f0e9; border-radius: 17px; color: #126c54; }
+    .callout strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .callout p { margin: 0; color: #48786b; font-size: 12px; }
+    .evidence { display: grid; grid-template-columns: 115px 1fr; gap: 16px; align-items: start; }
+    .metric { padding: 14px 12px; text-align: center; border-radius: 15px; color: var(--blue-dark); background: var(--blue-soft); }
+    .metric b { display: block; font-size: 24px; letter-spacing: -.04em; line-height: 1.1; }
+    .metric span { font-size: 10px; font-weight: 700; }
+    .evidence h3 { margin-top: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+    .chip { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: #566273; font-size: 10px; font-weight: 700; }
+    .mini-label { color: #8b95a3; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .pill { display: inline-block; margin-top: 11px; padding: 5px 8px; border-radius: 8px; color: var(--blue-dark); background: var(--blue-soft); font-size: 10px; font-weight: 800; }
+    .tennis-study { border-left: 3px solid var(--blue); }
+    .tennis-study h3 { margin-top: 6px; }
+    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+    .timeline-item { position: relative; padding: 0 15px 0 0; }
+    .timeline-item::before { content: ""; display: block; width: 12px; height: 12px; margin-bottom: 12px; border: 3px solid white; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 1px #b8d5ff; }
+    .timeline-item:not(:last-child)::after { content: ""; position: absolute; top: 5px; left: 13px; right: 0; height: 2px; background: #dce8f8; }
+    .timeline-item b { display: block; margin-bottom: 4px; font-size: 13px; }
+    .timeline-item p { font-size: 11px; }
+    .product-top { display: flex; align-items: start; justify-content: space-between; gap: 8px; }
+    .product-top h3 { margin: 0 0 4px; }
+    .product-type { color: var(--blue-dark); background: var(--blue-soft); padding: 4px 7px; border-radius: 7px; font-size: 9px; font-weight: 800; white-space: nowrap; }
+    .product-card { padding: 17px; }
+    .product-card p { font-size: 12px; }
+    .product-card .fact { margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--line); color: #596575; font-size: 10px; }
+    .activation { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .activation-row { display: flex; gap: 12px; padding: 14px; background: #f8fafc; border-radius: 15px; }
+    .activation-row .icon { flex: 0 0 34px; width: 34px; height: 34px; }
+    .activation-row h3 { margin: 0 0 3px; font-size: 13px; }
+    .activation-row p { font-size: 11px; }
+    .partner-flow { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 14px; padding: 14px; border-radius: 15px; background: #f6f8fb; }
+    .partner-flow span { text-align: center; font-size: 10px; font-weight: 750; }
+    .partner-flow i { color: #a6b0bc; font-style: normal; }
+    .pitch { padding: 21px; color: white; background: #172b4d; border-radius: 20px; }
+    .pitch .mini-label { color: #91baff; }
+    .pitch blockquote { margin: 11px 0 0; font-size: clamp(15px, 2.5vw, 19px); font-weight: 750; line-height: 1.5; letter-spacing: -.025em; word-break: keep-all; }
+    .priority { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .priority:last-child { border-bottom: 0; padding-bottom: 0; }
+    .rank { display: grid; flex: 0 0 29px; width: 29px; height: 29px; place-items: center; color: var(--blue-dark); background: var(--blue-soft); border-radius: 9px; font-size: 12px; font-weight: 850; }
+    .priority b { display: block; font-size: 13px; }
+    .priority small { display: block; color: var(--muted); font-size: 11px; }
+    footer { padding: 21px 0 7px; color: #8b95a3; text-align: center; font-size: 10px; }
+    footer a { color: #657080; text-decoration: underline; text-underline-offset: 2px; }
+    svg { display: block; width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      .topbar-inner { height: 54px; }
+      .brand { font-size: 12px; }
+      .brand-mark { width: 27px; height: 27px; }
+      .nav { gap: 14px; max-width: 56vw; font-size: 11px; }
+      main { padding-top: 14px; }
+      .hero { border-radius: 22px; }
+      .hero-bottom { align-items: start; flex-direction: column; }
+      .grid.two, .grid.three, .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #evidence .grid.two, #seoul-open > .grid.two { grid-template-columns: 1fr; }
+      .section-head { margin-top: 25px; align-items: start; flex-direction: column; gap: 4px; }
+      .card { padding: 16px; border-radius: 18px; }
+      .summary-card { padding: 15px; }
+      .flow { grid-template-columns: 1fr; gap: 7px; }
+      .flow-step { min-height: 64px; padding: 10px 13px; flex-direction: row; justify-content: start; text-align: left; }
+      .flow-step .icon { flex: 0 0 34px; }
+      .flow-step small { margin-left: auto; text-align: right; }
+      .flow-step:not(:last-child)::after { content: "⌄"; top: auto; bottom: -12px; right: 15px; width: 17px; height: 18px; font-size: 18px; }
+      .evidence { grid-template-columns: 1fr; }
+      .metric { display: flex; align-items: baseline; justify-content: center; gap: 9px; padding: 10px; }
+      .metric b { font-size: 21px; }
+      .timeline { grid-template-columns: 1fr; gap: 15px; }
+      .timeline-item { display: grid; grid-template-columns: 20px 1fr; gap: 0 9px; padding: 0; }
+      .timeline-item::before { grid-row: span 2; margin: 4px 0 0; }
+      .timeline-item:not(:last-child)::after { top: 17px; bottom: -15px; left: 5px; right: auto; width: 2px; height: auto; }
+      .timeline-item b { margin: 0 0 2px; }
+      .activation { grid-template-columns: 1fr; }
+      .partner-flow { flex-wrap: wrap; justify-content: center; gap: 8px 5px; }
+      .partner-flow span { max-width: 74px; }
+    }
+    @media (max-width: 390px) {
+      .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
+      .nav { max-width: 50vw; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Palm Cooling 보고서 처음으로">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11 4.5a1.5 1.5 0 0 1 3 0V11 6a1.5 1.5 0 0 1 3 0v7l1-1a1.8 1.8 0 0 1 2.8 2.2l-3.3 5A4 4 0 0 1 14.2 22h-2.5a4 4 0 0 1-3.2-1.6L5 15.8A2 2 0 0 1 8 13.4V12Z"/></svg></span>
+        PALM COOLING <span style="color:#a0a8b3">×</span> SEOUL OPEN
+      </a>
+      <nav class="nav" aria-label="페이지 목차">
+        <a href="#principle">원리</a><a href="#evidence">근거</a><a href="#market">시장</a><a href="#seoul-open">서울오픈</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="hero" aria-labelledby="main-title">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg> ATHLETE COOLING TECHNOLOGY</span>
+      <h1 id="main-title">손바닥 냉각을<br><span>테니스의 휴식 시간</span>에</h1>
+      <p class="lead">Palm Cooling은 손바닥의 혈류를 이용해 운동 중 열을 배출하는 기술입니다. 체인지오버를 활용하면 경기 흐름을 끊지 않고 선수 냉각과 회복을 지원할 수 있습니다.</p>
+      <div class="hero-bottom"><span class="date">기술·시장 검토 요약 · 2026.09.27</span><a class="cta" href="#seoul-open">서울오픈 적용안 보기 <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section aria-label="핵심 요약">
+      <div class="section-head"><h2>핵심만 먼저 보기</h2><p>기술 근거에서 현장 적용까지</p></div>
+      <div class="grid four">
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7c0 3 2 5 7 5s7 2 7 5M5 17c0-3 2-5 7-5s7-2 7-5"/></svg></span><h3>손바닥으로 열 배출</h3><p>손바닥 혈류와 냉각면의 접촉으로 체열을 외부로 이동시킵니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>휴식 시간에 사용</h3><p>90초 체인지오버가 짧은 냉각 세션을 넣기 좋은 구간입니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 5-7"/></svg></span><h3>연구에서 현장으로</h3><p>테니스 연구, 대회 제공 사례, 연맹 파일럿이 이어지고 있습니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M2 19h20"/></svg></span><h3>서울오픈 파일럿 기회</h3><p>선수 서비스와 아시아 프로테니스 실사용 레퍼런스를 함께 만듭니다.</p></article>
+      </div>
+    </section>
+
+    <section id="principle">
+      <div class="section-head"><h2>작동 원리</h2><p>손바닥을 몸과 외부 사이의 열교환면으로 활용</p></div>
+      <div class="flow" aria-label="체열이 손바닥을 통해 외부로 이동하는 과정">
+        <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0a4 4 0 1 0 4 4 4 4 0 0 0-4-4Z"/><path d="M9 7h3"/></svg></span><strong>운동으로<br>체열 발생</strong><small>근육 활동</small></div>
+        <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M7 8l-3 4 3 4m10-8 3 4-3 4"/><circle cx="12" cy="12" r="2"/></svg></span><strong>혈액이 열을<br>운반</strong><small>혈액 순환</small></div>
+        <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11 4.5a1.5 1.5 0 0 1 3 0V11 6a1.5 1.5 0 0 1 3 0v7l1-1a1.8 1.8 0 0 1 2.8 2.2l-3.3 5A4 4 0 0 1 14.2 22h-2.5a4 4 0 0 1-3.2-1.6L5 15.8A2 2 0 0 1 8 13.4V12Z"/></svg></span><strong>손바닥 혈류로<br>열 이동</strong><small>AVA가 풍부한 피부</small></div>
+        <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6zM9 8h6m-6 4h6m-6 4h6"/></svg></span><strong>냉각면에<br>손바닥 접촉</strong><small>열교환</small></div>
+        <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 3-6 5-9Z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg></span><strong>열을 외부로<br>배출</strong><small>몸의 열 부담 완화</small></div>
+      </div>
+      <div class="callout" style="margin-top:12px"><strong>왜 손바닥일까요?</strong><p>손바닥·발바닥의 털 없는 피부에는 AVA(동정맥 문합)가 발달해 있어 혈류를 통한 열 교환에 활용될 수 있습니다.</p></div>
+    </section>
+
+    <section id="evidence">
+      <div class="section-head"><h2>연구 근거</h2><p>보고서에 정리된 핵심 결과</p></div>
+      <div class="grid two">
+        <article class="card evidence">
+          <div class="metric"><b>약 42W</b><span>보고된 최대 열 제거량</span></div>
+          <div><span class="mini-label">열 제거 · 운동 후 냉각 실험</span><h3>체감뿐 아니라 실제 열 이동</h3><p>심부체온을 약 38.8°C까지 올린 참가자에게 10°C 냉각을 적용했을 때, 최대 약 42W 수준의 열 제거가 측정됐습니다.</p><div class="chips"><span class="chip">냉각 온도</span><span class="chip">접촉 면적</span><span class="chip">혈류</span><span class="chip">지속 시간</span></div></div>
+        </article>
+        <article class="card">
+          <span class="mini-label">운동 수행 · Stanford 연구</span><h3>냉각과 혈류를 함께 고려</h3><p>손바닥 냉각에 음압을 결합해 혈류와 열교환을 유지하려는 방식이 연구됐습니다. 고온 운동에서 체온 상승 속도 완화와 운동 지속시간 증가, 저항 운동량 변화가 보고됐습니다.</p><div class="pill">Palm Cooling + Negative Pressure</div>
+        </article>
+        <article class="card">
+          <span class="mini-label">반복 고강도 운동 · 2025 RCT</span><h3>후반부 수행 저하 관리 가능성</h3><p>반복 스프린트 연구에서 후반 기록 저하가 줄거나, 높은 속도를 유지한 반복 횟수가 늘어난 결과가 보고됐습니다.</p><div class="chips"><span class="chip">반복 스프린트</span><span class="chip">짧은 회복 구간</span><span class="chip">열적 불편감</span></div>
+        </article>
+        <article class="card tennis-study">
+          <span class="mini-label">직접적인 테니스 연구 · 2015</span><h3>체인지오버에서 약 60초 적용</h3><p>남자 대학 테니스 선수 12명이 고온 환경에서 모의 경기를 하고, 홀수 게임 종료 후 양손을 10°C로 냉각했습니다. 심부체온·심박수 관리, RPE 감소, 그라운드스트로크 정확도 유지가 보고됐습니다.</p><div class="pill">경기 → Changeover → 냉각 → 경기</div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="테니스와의 적합성">
+      <div class="section-head"><h2>테니스와 잘 맞는 이유</h2><p>경기 구조에 이미 냉각 타이밍이 있습니다</p></div>
+      <div class="grid four">
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 4.5c4 4 4 11 0 15m8-15c-4 4-4 11 0 15"/></svg></span><h3>긴 경기</h3><p>경기 시간이 길어지면 체열이 누적될 수 있습니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h4l2-10 4 12 2-7h4"/></svg></span><h3>반복 고강도</h3><p>스프린트와 방향 전환, 가속·감속이 이어집니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="17" cy="7" r="3"/><path d="M3 18c3-4 6-6 10-6m-7 9 4-5 4 2 5-5"/></svg></span><h3>야외 더위</h3><p>여름에는 기온과 일사에 직접 노출됩니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>정기 휴식</h3><p>체인지오버는 음료와 냉각을 함께 할 수 있는 구간입니다.</p></article>
+      </div>
+    </section>
+
+    <section id="market">
+      <div class="section-head"><h2>테니스 도입 흐름</h2><p>개인 사용에서 연맹 파일럿까지</p></div>
+      <div class="card"><div class="timeline">
+        <div class="timeline-item"><b>연구 기반</b><p>Stanford 등에서 열 제거와 운동 수행 가능성을 연구</p></div>
+        <div class="timeline-item"><b>선수 사용</b><p>경기 중 Cooling Glove·Palm Cooling 장치 활용 사례</p></div>
+        <div class="timeline-item"><b>대회 제공</b><p>2024 Atlanta Open, CoolMitt 선수 지원 사례</p></div>
+        <div class="timeline-item"><b>연맹 파일럿</b><p>2026 Tennis Australia와 Kühler 테스트</p></div>
+      </div></div>
+    </section>
+
+    <section aria-label="주요 제품">
+      <div class="section-head"><h2>주요 제품 한눈에 보기</h2><p>방식과 테니스 관련 사례 비교</p></div>
+      <div class="grid four">
+        <article class="card product-card"><div class="product-top"><div><h3>CoolMitt</h3><p>물 순환식 냉각</p></div><span class="product-type">수랭</span></div><div class="fact">Atlanta Open 선수 제공 사례</div></article>
+        <article class="card product-card"><div class="product-top"><div><h3>CryoTherm Palm</h3><p>전자식 능동 냉각</p></div><span class="product-type">휴대형</span></div><div class="fact">8° / 12° / 16°C 설정, USB-C 충전</div></article>
+        <article class="card product-card"><div class="product-top"><div><h3>Kühler</h3><p>휴대형 Palm Cooling</p></div><span class="product-type">파일럿</span></div><div class="fact">Tennis Australia National Tennis Academy 테스트</div></article>
+        <article class="card product-card"><div class="product-top"><div><h3>KYLA</h3><p>Palm Cooling 장치</p></div><span class="product-type">프로토타입</span></div><div class="fact">보고서에 Djokovic 경기 사용 사례 기재</div></article>
+        <article class="card product-card"><div class="product-top"><div><h3>Apex Cool Labs</h3><p>Narwhals</p></div><span class="product-type">패시브</span></div><div class="fact">프로스포츠 활용 사례</div></article>
+        <article class="card product-card"><div class="product-top"><div><h3>AVA Cooling</h3><p>AF Charge Bar</p></div><span class="product-type">간편형</span></div><div class="fact">단순 냉각 바 구조</div></article>
+      </div>
+    </section>
+
+    <section id="seoul-open">
+      <div class="section-head"><h2>서울오픈 적용안</h2><p>협찬을 넘어 선수 경험을 만드는 파일럿</p></div>
+      <div class="grid two">
+        <article class="card">
+          <span class="mini-label">현장 운영</span><h3>선수 동선에 맞춰 배치</h3>
+          <div class="activation" style="margin-top:14px">
+            <div class="activation-row"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M2 19h20"/></svg></span><div><h3>Player Cooling Station</h3><p>선수 전용 공간·라운지에 설치</p></div></div>
+            <div class="activation-row"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V8l7-4 7 4v12M8 11h8m-8 4h8"/></svg></span><div><h3>Practice Court</h3><p>연습·워밍업 후 사용 지원</p></div></div>
+            <div class="activation-row"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Match Cooling</h3><p>규정이 허용하는 범위에서 체인지오버 활용</p></div></div>
+            <div class="activation-row"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h4l2-8 4 14 2-6h4"/></svg></span><div><h3>Recovery Area</h3><p>경기 종료 후 회복 구역에 배치</p></div></div>
+          </div>
+        </article>
+        <article class="card">
+          <span class="mini-label">파트너십 가치</span><h3>양쪽에 남는 결과</h3>
+          <div class="grid two" style="margin-top:13px">
+            <div><span class="pill">서울오픈</span><p style="margin-top:8px">선수 냉각 서비스, 최신 퍼포먼스 기술 도입, 대회 콘텐츠</p></div>
+            <div><span class="pill">브랜드</span><p style="margin-top:8px">프로 선수 피드백, 실제 사용 레퍼런스, 아시아 시장 노출</p></div>
+          </div>
+          <div class="partner-flow" aria-label="제품 지원부터 레퍼런스까지"><span>제품 지원</span><i>→</i><span>선수 사용</span><i>→</i><span>피드백·콘텐츠</span><i>→</i><span>아시아 레퍼런스</span></div>
+          <div style="margin-top:15px" class="pitch"><span class="mini-label">파트너 제안 핵심 문구</span><blockquote>“Palm Cooling 기술의 프로테니스 도입 흐름을 2026 서울오픈에서 아시아로 확장하고 싶습니다.”</blockquote></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="우선 접촉 파트너">
+      <div class="section-head"><h2>우선 접촉 후보</h2><p>보고서 기준 제안 순서</p></div>
+      <div class="card">
+        <div class="priority"><span class="rank">1</span><div><b>CoolMitt</b><small>Atlanta Open 운영 경험을 서울오픈 선수 지원 프로그램으로 연결</small></div></div>
+        <div class="priority"><span class="rank">2</span><div><b>Kühler</b><small>Tennis Australia 파일럿과 이어지는 아시아 현장 레퍼런스 제안</small></div></div>
+        <div class="priority"><span class="rank">3</span><div><b>KYLA</b><small>선수 사용 사례와 아시아 시장 노출을 연결</small></div></div>
+        <div class="priority"><span class="rank">4</span><div><b>Therabody</b><small>CryoTherm Palm의 프로테니스 사용 사례 구축 기회</small></div></div>
+      </div>
+    </section>
+
+    <section aria-label="최종 판단">
+      <div class="callout"><strong>제안 방향: 2026 Seoul Open — Palm Cooling Technology Partnership</strong><p>서울오픈은 선수에게 냉각 기술을 제공하고, 파트너사는 실제 프로테니스 사용 경험과 선수 피드백을 확보하는 파일럿으로 설계할 수 있습니다.</p></div>
+    </section>
+    <footer>내용 기준: 제공된 Palm Cooling 검토 보고서 · 디자인 참고: <a href="https://toss.tech/article/toss-design-system" target="_blank" rel="noreferrer">Toss Design System 소개</a></footer>
+  </main>
+</body>
+</html>
