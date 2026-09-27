@@ -86,17 +86,25 @@ border:1px solid var(--line);
 border-radius:32px}
 .hero-layout{display:grid;
 grid-template-columns:minmax(0,1fr) minmax(280px,.88fr);
+grid-template-areas:"intro visual" "details visual";
 align-items:center;
-gap:32px}
+column-gap:32px;
+row-gap:0}
+.hero-intro{grid-area:intro;
+align-self:end}
+.hero-details{grid-area:details;
+align-self:start}
 .hero-visual{margin:0;
+grid-area:visual;
 overflow:hidden;
 border-radius:24px;
 background:var(--canvas)}
 .hero-visual a{display:block}
 .hero-visual img{display:block;
 width:100%;
-aspect-ratio:4/3;
-object-fit:cover}
+aspect-ratio:11/5;
+object-fit:cover;
+object-position:center top}
 .hero-visual figcaption{padding:10px 14px;
 color:var(--muted);
 font-size:12px}
@@ -497,6 +505,7 @@ section{scroll-margin-top:108px}
 .hero{padding:28px 24px;
 border-radius:24px}
 .hero-layout{grid-template-columns:1fr;
+grid-template-areas:"intro" "visual" "details";
 gap:24px}
 .hero h1{font-size:36px}
 .lead{font-size:16px}
@@ -586,14 +595,16 @@ font-size:12px}
   <main id="top" class="wrap">
     <section class="hero" aria-labelledby="main-title">
       <div class="hero-layout">
-        <div>
+        <div class="hero-intro">
           <span class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg> Tennis changeover × Palm Cooling</span>
           <h1 id="main-title">경기 사이 <span><em>약 90초</em>,<br>냉각을 위한 시간</span></h1>
+        </div>
+        <div class="hero-details">
           <p class="lead">체인지오버는 경기 흐름을 끊지 않고 손바닥 냉각을 시도할 수 있는 정기적인 휴식 구간입니다.</p>
           <div class="changeover-flow" aria-label="경기에서 냉각을 거쳐 복귀하는 흐름"><span>경기</span><i aria-hidden="true">→</i><span class="focus">체인지오버 · 약 90초</span><i aria-hidden="true">→</i><span>경기 복귀</span></div>
           <div class="hero-bottom"><span class="date">기술·시장 검토 요약 · 2026.09.27</span><a class="cta" href="#seoul-open">서울오픈 운영안 보기 <span aria-hidden="true">→</span></a></div>
         </div>
-        <figure class="hero-visual"><a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/ATP.png?v=1722446054&amp;width=1600" alt="2024 Atlanta Open 경기 중 CoolMitt를 사용하는 선수" decoding="async"></a><figcaption>Atlanta Open 선수 사용 장면 · 사진: CoolMitt · 현장 보도: Atlanta News First</figcaption></figure>
+        <figure class="hero-visual"><a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/ATP.png?v=1722446054&amp;width=1600" alt="2024 Atlanta Open 경기 중 선수가 CoolMitt에 손을 넣은 장면" decoding="async"></a><figcaption>Atlanta Open 선수 사용 장면 · 사진: CoolMitt · 현장 보도: Atlanta News First</figcaption></figure>
       </div>
     </section>
 
