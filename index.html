@@ -143,13 +143,16 @@ background:var(--canvas)}
 background:var(--brand-weak)}
 .changeover-flow i{color:var(--muted);
 font-style:normal}
-.summary-lines{padding:4px 0;
-border-top:1px solid var(--line)}
-.summary-lines p{margin:0;
-padding:15px 0;
-border-bottom:1px solid var(--line);
-color:var(--sub)}
-.summary-lines strong{color:var(--text)}
+.summary-panel{overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:20px}
+.summary-lead{padding:18px 20px;background:var(--brand-weak)}
+.summary-lead strong{display:block;margin-bottom:5px;font-size:17px}
+.summary-lead p{margin:0;color:var(--sub);font-size:15px}
+.summary-lines{padding:0 20px}
+.summary-item{display:grid;grid-template-columns:100px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+.summary-item:last-child{border-bottom:0}
+.summary-label{font-size:14px;font-weight:700}
+.summary-item p{margin:0;color:var(--sub);font-size:15px;line-height:1.55}
+.summary-item strong{color:var(--text)}
 .proof-guide{padding:4px 20px;
 background:var(--surface);
 border:1px solid var(--line);
@@ -287,7 +290,9 @@ line-height:1.2;
 font-variant-numeric:proportional-nums}
 .metric span{font-size:12px;
 font-weight:600}
-.evidence h3{margin-top:0}
+.evidence-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.evidence-meta .proof-type{min-height:26px}
+.evidence h3{margin:0 0 8px;font-size:19px;line-height:1.4}
 .chips{display:flex;
 flex-wrap:wrap;
 gap:8px;
@@ -532,6 +537,11 @@ margin-bottom:14px}
 body{font-size:16px;line-height:1.6}
 .proof-row{grid-template-columns:max-content 1fr;gap:12px}
 .summary-card p,.card p,.tennis-case p,.global-case p{font-size:15px;line-height:1.6}
+.summary-item{grid-template-columns:1fr;gap:5px;padding:14px 0}
+.summary-lead{padding:16px}
+.summary-lead strong{font-size:16px}
+.summary-item p{font-size:15px;line-height:1.6}
+.summary-label{color:var(--brand-pressed)}
 .source-link,.tennis-case a,.global-case a{font-size:14px}
 .related-links a{font-size:13px}
 .mini-label,.source-note{color:var(--sub)}
@@ -564,11 +574,7 @@ background:var(--surface);
 font-size:18px}
 .evidence{grid-template-columns:1fr;
 gap:16px}
-.metric{display:flex;
-align-items:baseline;
-justify-content:center;
-gap:10px;
-padding:12px}
+.metric{display:inline-flex;width:max-content;max-width:100%;align-items:baseline;justify-content:flex-start;gap:8px;margin-bottom:2px;padding:8px 12px;border-radius:12px}
 .metric b{font-size:24px}
 .product-card .product-image,.product-card .product-image img{min-height:180px;
 height:180px}
@@ -623,11 +629,13 @@ height:180px}
 
     <section aria-label="Executive Summary">
       <div class="section-head"><h2>핵심 요약</h2><p>기술 원리부터 서울오픈 제안까지</p></div>
-      <div class="callout" style="margin-bottom:16px"><strong>손바닥 혈류를 이용해 운동 중 체열을 외부로 옮기는 기술입니다.</strong><p>테니스 직접 연구와 선수·대회 적용 사례를 바탕으로 서울오픈 선수 공간과 휴식 구간에 파일럿을 제안합니다.</p></div>
-      <div class="summary-lines">
-        <p><strong>기술과 연구</strong> · 손바닥의 AVA 혈류를 활용해 열을 배출합니다. 고온 운동 뒤 10°C 손바닥 냉각 실험에서 최대 열 제거율의 평균이 약 <strong>42W</strong>였고, 운동 지속시간과 반복 스프린트 수행을 살핀 연구도 있습니다.</p>
-        <p><strong>테니스와의 접점</strong> · 남자 대학선수 12명의 고온 모의 경기에서 체인지오버 중 약 <strong>60초 양손 냉각</strong>을 적용했습니다. 심부체온·심박수 상승 폭과 자각운동강도가 낮아지고 스트로크 정확도가 유지됐습니다.</p>
-        <p><strong>현장 도입</strong> · Atlanta Open의 선수 이용 제공, Djokovic의 KYLA 프로토타입 사용, Tennis Australia의 Kühler 아카데미 파일럿이 이어지고 있습니다. 다른 종목의 경기·훈련에도 도입되고 있습니다.</p>
+      <div class="summary-panel">
+        <div class="summary-lead"><strong>서울오픈에서 Palm Cooling 파일럿을 제안합니다.</strong><p>손바닥 혈류를 활용한 냉각 기술을 선수 라운지와 연습·회복 공간에 제공합니다.</p></div>
+        <div class="summary-lines">
+          <div class="summary-item"><span class="summary-label">연구</span><p>고온 운동 뒤 손바닥 냉각 연구에서 최대 열 제거율 평균 약 <strong>42W</strong>가 측정됐고, 반복 스프린트 연구도 진행됐습니다.</p></div>
+          <div class="summary-item"><span class="summary-label">테니스</span><p>대학 남자 선수 12명의 고온 모의 경기에서 체인지오버 중 양손을 <strong>60초</strong> 냉각했습니다. 심부체온·심박수 상승 폭과 RPE가 낮아지고 스트로크 정확도가 유지됐습니다.</p></div>
+          <div class="summary-item"><span class="summary-label">현장 적용</span><p>Atlanta Open의 CoolMitt 제공, Djokovic의 KYLA 프로토타입 사용, Tennis Australia의 Kühler 아카데미 파일럿이 이어지고 있습니다.</p></div>
+        </div>
       </div>
     </section>
 
@@ -683,22 +691,22 @@ height:180px}
       <div class="grid two">
         <article class="card evidence">
           <div class="metric"><b>약 42W</b><span>최대 열 제거율의 평균</span></div>
-          <div><span class="proof-type">연구 결과</span> <span class="mini-label">Kuennen et al. · 2010</span><h3>실제로 열을 제거할 수 있습니다</h3><p>남성 10명이 고온 운동으로 심부체온을 약 38.8°C까지 올린 뒤, 앉아서 10°C 손바닥 냉각을 50분간 적용했습니다. 최대 열 제거율은 평균 <strong>42 ± 12W</strong>였습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20033702/" target="_blank" rel="noopener noreferrer">Kuennen et al. 2010 · PubMed ↗</a></div>
+          <div><div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Kuennen et al. · 2010</span></div><h3>손바닥에서 열 제거량을 측정했습니다</h3><p>남성 10명이 고온 운동으로 심부체온을 약 38.8°C까지 올린 뒤, 앉아서 10°C 손바닥 냉각을 50분간 적용했습니다. 최대 열 제거율은 평균 <strong>42 ± 12W</strong>였습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20033702/" target="_blank" rel="noopener noreferrer">Kuennen et al. 2010 · PubMed ↗</a></div>
         </article>
         <article class="card">
-          <span class="proof-type">연구 결과</span> <span class="mini-label">Grahn, Cao & Heller · 2005</span><h3>고온 운동에서 냉각과 음압을 결합</h3><p>40°C 트레드밀 운동 중 한 손에 18~22°C 냉각과 음압을 적용했습니다. 평균 운동 지속시간은 <strong>32.3분에서 46.1분</strong>으로 늘었고 식도온도 상승 속도는 낮아졌습니다.</p><a class="source-link" href="https://doi.org/10.1152/japplphysiol.00093.2005" target="_blank" rel="noopener noreferrer">Grahn et al. 2005 · 논문 ↗</a>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Grahn, Cao & Heller · 2005</span></div><h3>고온 운동에서 냉각과 음압을 결합</h3><p>40°C 트레드밀 운동 중 한 손에 18~22°C 냉각과 음압을 적용했습니다. 평균 운동 지속시간은 <strong>32.3분에서 46.1분</strong>으로 늘었고 식도온도 상승 속도는 낮아졌습니다.</p><a class="source-link" href="https://doi.org/10.1152/japplphysiol.00093.2005" target="_blank" rel="noopener noreferrer">Grahn et al. 2005 · 논문 ↗</a>
         </article>
         <article class="card tennis-study">
-          <span class="proof-type">연구 결과</span> <span class="mini-label">Fugsuwan et al. · 2015</span><h3>테니스 체인지오버에서 60초 적용</h3><p>대학 남자 테니스 선수 12명이 WBGT 31°C에서 모의 경기를 했습니다. 홀수 게임 뒤 90초 휴식 중 양손을 10°C로 60초 냉각했습니다. 냉각 조건에서는 심부체온과 심박수 상승 폭, RPE가 낮았고 그라운드스트로크 정확도가 유지됐습니다.</p><a class="source-link" href="https://he01.tci-thaijo.org/index.php/JSST/article/view/44117" target="_blank" rel="noopener noreferrer">Fugsuwan et al. 2015 · 논문 ↗</a>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Fugsuwan et al. · 2015</span></div><h3>테니스 체인지오버에서 60초 적용</h3><p>대학 남자 테니스 선수 12명이 WBGT 31°C에서 모의 경기를 했습니다. 홀수 게임 뒤 90초 휴식 중 양손을 10°C로 60초 냉각했습니다. 냉각 조건에서는 심부체온과 심박수 상승 폭, RPE가 낮았고 그라운드스트로크 정확도가 유지됐습니다.</p><a class="source-link" href="https://he01.tci-thaijo.org/index.php/JSST/article/view/44117" target="_blank" rel="noopener noreferrer">Fugsuwan et al. 2015 · 논문 ↗</a>
         </article>
         <article class="card">
-          <span class="proof-type">연구 결과</span> <span class="mini-label">Brown / Wrabley · 2025</span><h3>반복 스프린트에서 가능성 확인</h3><p>참가자 15명의 Brown 연구에서는 냉각군의 방향전환 스프린트 후반 기록 저하가 줄었습니다. Wrabley 연구의 여성 대학선수 20명은 최고속도의 90% 이상을 유지한 스프린트가 평균 <strong>6.0회에서 10.3회</strong>로 늘었습니다.</p><a class="source-link" href="https://www.mdpi.com/1424-8220/25/6/1830" target="_blank" rel="noopener noreferrer">Brown et al. · Sensors ↗</a> · <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12143273/" target="_blank" rel="noopener noreferrer">Wrabley et al. · IJES ↗</a>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Brown / Wrabley · 2025</span></div><h3>반복 스프린트에서 가능성 확인</h3><p>참가자 15명의 Brown 연구에서는 냉각군의 방향전환 스프린트 후반 기록 저하가 줄었습니다. Wrabley 연구의 여성 대학선수 20명은 최고속도의 90% 이상을 유지한 스프린트가 평균 <strong>6.0회에서 10.3회</strong>로 늘었습니다.</p><a class="source-link" href="https://www.mdpi.com/1424-8220/25/6/1830" target="_blank" rel="noopener noreferrer">Brown et al. · Sensors ↗</a> · <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12143273/" target="_blank" rel="noopener noreferrer">Wrabley et al. · IJES ↗</a>
         </article>
         <article class="card">
-          <span class="proof-type">연구 결과</span> <span class="mini-label">Iwata et al. · 2024</span><h3>열감과 쾌적감 개선을 확인했습니다</h3><p>활동적인 남성 10명이 33°C 환경에서 운동할 때 12°C와 0°C 양손 냉각 모두 <strong>열감과 열적 쾌적감</strong>을 개선했습니다. 심부체온·발한·심폐 지표에는 차이가 없었습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/38382413/" target="_blank" rel="noopener noreferrer">Iwata et al. 2024 · PubMed ↗</a>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Iwata et al. · 2024</span></div><h3>열감과 쾌적감 개선을 확인했습니다</h3><p>활동적인 남성 10명이 33°C 환경에서 운동할 때 12°C와 0°C 양손 냉각 모두 <strong>열감과 열적 쾌적감</strong>을 개선했습니다. 심부체온·발한·심폐 지표에는 차이가 없었습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/38382413/" target="_blank" rel="noopener noreferrer">Iwata et al. 2024 · PubMed ↗</a>
         </article>
         <article class="card">
-          <span class="proof-type">연구 결과</span> <span class="mini-label">저항운동 · 2010 / 2012</span><h3>초기 연구에서는 운동량 증가가 보고됐습니다</h3><p>Kwon 연구의 훈련된 남성 16명은 세트 사이 10°C 냉각과 음압을 사용했을 때 벤치프레스 총 운동량이 평균 <strong>1,972kg에서 2,480kg</strong>으로 늘었습니다. Grahn 연구에서도 세트 사이 <strong>3분 냉각</strong>과 훈련량 증가가 보고됐습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20139781/" target="_blank" rel="noopener noreferrer">Kwon et al. 2010 ↗</a> · <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/22076097/" target="_blank" rel="noopener noreferrer">Grahn et al. 2012 ↗</a>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">저항운동 · 2010 / 2012</span></div><h3>초기 연구에서는 운동량 증가가 보고됐습니다</h3><p>Kwon 연구의 훈련된 남성 16명은 세트 사이 10°C 냉각과 음압을 사용했을 때 벤치프레스 총 운동량이 평균 <strong>1,972kg에서 2,480kg</strong>으로 늘었습니다. Grahn 연구에서도 세트 사이 <strong>3분 냉각</strong>과 훈련량 증가가 보고됐습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20139781/" target="_blank" rel="noopener noreferrer">Kwon et al. 2010 ↗</a> · <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/22076097/" target="_blank" rel="noopener noreferrer">Grahn et al. 2012 ↗</a>
         </article>
       </div>
       <div class="callout" style="margin-top:16px"><strong>저항운동 메타분석 결과</strong><p>2026년 메타분석은 10개 연구·182명을 종합했습니다. 세트 사이 평균 2.3분 손바닥 또는 발바닥 냉각에서 저항운동량과 RPE의 유의한 개선은 나타나지 않았습니다.</p><a class="source-link" href="https://doi.org/10.1016/j.heliyon.2026.e45371" target="_blank" rel="noopener noreferrer">Heliyon 2026 · 체계적 문헌고찰·메타분석 ↗</a> · <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/37399240/" target="_blank" rel="noopener noreferrer">2023년 무효 결과 연구 ↗</a></div>
