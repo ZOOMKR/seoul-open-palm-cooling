@@ -283,7 +283,8 @@ color:var(--sub);
 font-size:14px;
 line-height:1.55}
 .photo-grid{display:grid;
-grid-template-columns:1.25fr 1fr 1fr;
+grid-template-columns:minmax(0,760px);
+justify-content:center;
 gap:16px;
 margin-top:16px}
 .photo-card{min-width:0;
@@ -295,7 +296,8 @@ border-radius:20px}
 .photo-card a{display:block}
 .photo-card img{display:block;
 width:100%;
-height:240px;
+height:auto;
+aspect-ratio:16/9;
 object-fit:cover;
 background:#f2f4f6}
 .photo-card figcaption{padding:16px}
@@ -596,18 +598,10 @@ font-size:12px}
         <article class="tennis-case"><span class="year">2024 · Atlanta Open</span><h3>대회 선수에게 CoolMitt 제공</h3><p>대회 기간 선수들이 사용할 수 있도록 장비를 배치했습니다. 짧은 휴식에 실제 제품을 활용한 프로테니스 운영 사례입니다.</p></article>
         <article class="tennis-case"><span class="year">2026 · Tennis Australia</span><h3>Kühler 현장 파일럿</h3><p>Australian Open의 AO StartUps 선정 후 National Tennis Academy에서 훈련, 매치플레이 시뮬레이션, 회복 프로토콜로 테스트합니다.</p></article>
       </div>
-      <div class="photo-grid" aria-label="Palm Cooling 제품과 테니스 사용 사진">
+      <div class="photo-grid" aria-label="Palm Cooling 테니스 경기 실사용 사진">
         <figure class="photo-card">
           <a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/ATP.png?v=1722446054&amp;width=1600" alt="2024 Atlanta Open에서 선수가 경기 중 CoolMitt 냉각 장치를 사용하는 모습" loading="lazy" decoding="async"></a>
           <figcaption><strong>Atlanta Open 실사용 장면</strong><span>사진: CoolMitt 뉴스 페이지 · 보도: Atlanta News First</span></figcaption>
-        </figure>
-        <figure class="photo-card">
-          <a href="https://coolmitt.com/products/coolmitt" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/coolmitt_website_v2_1.jpg?v=1713341328&amp;width=1200" alt="순환수 쿨링 유닛과 손바닥용 CoolMitt 장갑 제품 사진" loading="lazy" decoding="async"></a>
-          <figcaption><strong>CoolMitt 제품</strong><span>순환수 방식 · 사진: CoolMitt 공식 제품 페이지</span></figcaption>
-        </figure>
-        <figure class="photo-card">
-          <a href="https://getkuhler.com/products/kuhler" target="_blank" rel="noopener noreferrer"><img src="https://getkuhler.com/cdn/shop/files/kuhler-22-small.jpg?crop=center&amp;height=940&amp;v=1773077888&amp;width=940" alt="손에 쥐고 사용하는 파란색 Kühler 휴대형 손바닥 냉각기" loading="lazy" decoding="async"></a>
-          <figcaption><strong>Kühler 휴대형 제품</strong><span>전자식 능동 냉각 · 사진: Kühler 공식 제품 페이지</span></figcaption>
         </figure>
       </div>
       <p class="source-note">대회 운영·파일럿 설명: <a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer">Atlanta News First</a> · <a href="https://ausopen.com/articles/news/ao-startups-spotlight-kuhler" target="_blank" rel="noopener noreferrer">Australian Open / AO StartUps</a></p>
