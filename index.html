@@ -419,14 +419,21 @@ a:focus-visible{outline:3px solid var(--brand);
 outline-offset:3px}
 
     @media(max-width:760px){.wrap{width:min(100% - 40px,560px)}
-.topbar-inner{height:56px}
+.topbar-inner{height:auto;
+flex-direction:column;
+align-items:stretch;
+gap:0;
+padding-top:8px}
 .brand{font-size:13px}
 .brand-mark{width:30px;
 height:30px}
-.nav{gap:2px;
-max-width:58vw;
+.nav{width:100%;
+max-width:none;
+justify-content:space-between;
+gap:0;
 font-size:12px}
-.nav a{padding:0 8px}
+.nav a{flex:1;
+padding:0 3px}
 main{padding-top:20px}
 .hero{padding:28px 24px;
 border-radius:24px}
