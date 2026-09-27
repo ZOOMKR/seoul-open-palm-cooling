@@ -3,168 +3,522 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7fa">
+  <meta name="theme-color" content="#f9fafb">
   <meta name="description" content="Palm Cooling 기술과 테니스 적용 가능성, 서울오픈 파트너십 제안 요약">
   <title>Palm Cooling × Seoul Open</title>
   <style>
-    :root {
-      color-scheme: light;
-      --blue: #3182f6;
-      --blue-dark: #1765d1;
-      --blue-soft: #eaf3ff;
-      --ink: #191f28;
-      --muted: #697586;
-      --line: #e7ebf0;
-      --surface: #fff;
-      --canvas: #f5f7fa;
-      --green: #00a878;
-      --radius: 22px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      font-synthesis: none;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-    body { margin: 0; background: var(--canvas); color: var(--ink); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(100% - 36px, 960px); margin-inline: auto; }
-    .topbar { position: sticky; z-index: 5; top: 0; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
-    .topbar-inner { height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 800; letter-spacing: -.03em; white-space: nowrap; }
-    .brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 10px; color: #fff; background: var(--blue); }
-    .nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; color: #657080; font-size: 12px; font-weight: 650; white-space: nowrap; }
-    .nav::-webkit-scrollbar { display: none; }
-    .nav a:hover, .nav a:focus-visible { color: var(--blue-dark); }
-    main { padding: 22px 0 64px; }
-    section { margin-top: 18px; scroll-margin-top: 78px; }
-    .hero { position: relative; overflow: hidden; padding: clamp(25px, 6vw, 52px); background: var(--surface); border: 1px solid var(--line); border-radius: 28px; }
-    .hero::after { content: ""; position: absolute; width: 270px; height: 270px; right: -100px; top: -105px; border-radius: 50%; background: radial-gradient(circle, #eaf3ff 0%, #f5f9ff 52%, transparent 70%); pointer-events: none; }
-    .eyebrow { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px; color: var(--blue-dark); background: var(--blue-soft); padding: 6px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
-    h1 { position: relative; z-index: 1; margin: 17px 0 10px; max-width: 680px; font-size: clamp(30px, 6.5vw, 52px); line-height: 1.16; letter-spacing: -.055em; }
-    h1 span { color: var(--blue); }
-    .lead { position: relative; z-index: 1; margin: 0; max-width: 650px; color: var(--muted); font-size: clamp(14px, 2.2vw, 17px); word-break: keep-all; }
-    .hero-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-top: 27px; }
-    .date { color: #8792a0; font-size: 11px; }
-    .cta { display: inline-flex; align-items: center; gap: 7px; color: white; background: var(--blue); padding: 11px 15px; border-radius: 12px; font-size: 13px; font-weight: 750; box-shadow: 0 5px 12px #3182f626; }
-    .cta:hover { background: var(--blue-dark); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin: 30px 2px 13px; }
-    .section-head h2 { margin: 0; font-size: 21px; letter-spacing: -.045em; line-height: 1.25; }
-    .section-head p { margin: 0; color: var(--muted); font-size: 12px; }
-    .card { min-width: 0; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-    .grid { display: grid; gap: 12px; }
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .summary-card { padding: 18px; }
-    .summary-card .icon, .icon { display: grid; width: 39px; height: 39px; place-items: center; color: var(--blue); background: var(--blue-soft); border-radius: 13px; }
-    .summary-card h3, .card h3 { margin: 12px 0 5px; font-size: 15px; letter-spacing: -.025em; }
-    .summary-card p, .card p { margin: 0; color: var(--muted); font-size: 13px; word-break: keep-all; }
-    .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch; gap: 8px; }
-    .flow-step { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 112px; padding: 14px 8px; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 17px; }
-    .flow-step:not(:last-child)::after { content: "›"; position: absolute; z-index: 1; right: -12px; top: 39px; display: grid; width: 20px; height: 25px; place-items: center; color: #9aa4b2; background: var(--canvas); font-size: 22px; font-weight: 400; }
-    .flow-step .icon { width: 34px; height: 34px; border-radius: 11px; }
-    .flow-step strong { font-size: 12px; line-height: 1.35; }
-    .flow-step small { color: var(--muted); font-size: 10px; line-height: 1.35; }
-    .callout { padding: 17px 19px; background: #edf8f5; border: 1px solid #d9f0e9; border-radius: 17px; color: #126c54; }
-    .callout strong { display: block; margin-bottom: 3px; font-size: 14px; }
-    .callout p { margin: 0; color: #48786b; font-size: 12px; }
-    .evidence { display: grid; grid-template-columns: 115px 1fr; gap: 16px; align-items: start; }
-    .metric { padding: 14px 12px; text-align: center; border-radius: 15px; color: var(--blue-dark); background: var(--blue-soft); }
-    .metric b { display: block; font-size: 24px; letter-spacing: -.04em; line-height: 1.1; }
-    .metric span { font-size: 10px; font-weight: 700; }
-    .evidence h3 { margin-top: 0; }
-    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-    .chip { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: #566273; font-size: 10px; font-weight: 700; }
-    .mini-label { color: #8b95a3; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
-    .pill { display: inline-block; margin-top: 11px; padding: 5px 8px; border-radius: 8px; color: var(--blue-dark); background: var(--blue-soft); font-size: 10px; font-weight: 800; }
-    .tennis-study { border-left: 3px solid var(--blue); }
-    .tennis-study h3 { margin-top: 6px; }
-    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
-    .timeline-item { position: relative; padding: 0 15px 0 0; }
-    .timeline-item::before { content: ""; display: block; width: 12px; height: 12px; margin-bottom: 12px; border: 3px solid white; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 1px #b8d5ff; }
-    .timeline-item:not(:last-child)::after { content: ""; position: absolute; top: 5px; left: 13px; right: 0; height: 2px; background: #dce8f8; }
-    .timeline-item b { display: block; margin-bottom: 4px; font-size: 13px; }
-    .timeline-item p { font-size: 11px; }
-    .tennis-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .tennis-case { padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
-    .tennis-case .year { color: var(--blue-dark); font-size: 11px; font-weight: 850; }
-    .tennis-case h3 { margin: 6px 0; font-size: 15px; }
-    .tennis-case p { margin: 0; color: var(--muted); font-size: 12px; }
-    .photo-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .photo-card { min-width: 0; overflow: hidden; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
-    .photo-card a { display: block; }
-    .photo-card img { display: block; width: 100%; height: 220px; object-fit: cover; background: #edf1f5; }
-    .photo-card figcaption { padding: 12px 14px 14px; }
-    .photo-card strong { display: block; margin-bottom: 3px; font-size: 12px; }
-    .photo-card span { color: var(--muted); font-size: 10px; }
-    .source-note { margin: 8px 2px 0; color: #8792a0; font-size: 10px; }
-    .product-top { display: flex; align-items: start; justify-content: space-between; gap: 8px; }
-    .product-top h3 { margin: 0 0 4px; }
-    .product-type { color: var(--blue-dark); background: var(--blue-soft); padding: 4px 7px; border-radius: 7px; font-size: 9px; font-weight: 800; white-space: nowrap; }
-    .product-card { padding: 17px; }
-    .product-card .product-image { display: block; overflow: hidden; margin-bottom: 10px; border-radius: 12px; background: #f5f7fa; }
-    .product-card .product-image img { display: block; width: 100%; height: 135px; object-fit: contain; }
-    .product-origin { margin: -5px 0 9px !important; color: #8b95a3 !important; font-size: 9px !important; }
-    .product-card p { font-size: 12px; }
-    .product-card .fact { margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--line); color: #596575; font-size: 10px; }
-    .activation { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .activation-row { display: flex; gap: 12px; padding: 14px; background: #f8fafc; border-radius: 15px; }
-    .activation-row .icon { flex: 0 0 34px; width: 34px; height: 34px; }
-    .activation-row h3 { margin: 0 0 3px; font-size: 13px; }
-    .activation-row p { font-size: 11px; }
-    .partner-flow { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 14px; padding: 14px; border-radius: 15px; background: #f6f8fb; }
-    .partner-flow span { text-align: center; font-size: 10px; font-weight: 750; }
-    .partner-flow i { color: #a6b0bc; font-style: normal; }
-    .pitch { padding: 21px; color: white; background: #172b4d; border-radius: 20px; }
-    .pitch .mini-label { color: #91baff; }
-    .pitch blockquote { margin: 11px 0 0; font-size: clamp(15px, 2.5vw, 19px); font-weight: 750; line-height: 1.5; letter-spacing: -.025em; word-break: keep-all; }
-    .priority { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .priority:last-child { border-bottom: 0; padding-bottom: 0; }
-    .rank { display: grid; flex: 0 0 29px; width: 29px; height: 29px; place-items: center; color: var(--blue-dark); background: var(--blue-soft); border-radius: 9px; font-size: 12px; font-weight: 850; }
-    .priority b { display: block; font-size: 13px; }
-    .priority small { display: block; color: var(--muted); font-size: 11px; }
-    footer { padding: 21px 0 7px; color: #8b95a3; text-align: center; font-size: 10px; }
-    footer a { color: #657080; text-decoration: underline; text-underline-offset: 2px; }
-    svg { display: block; width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    @media (max-width: 700px) {
-      .wrap { width: min(100% - 28px, 560px); }
-      .topbar-inner { height: 54px; }
-      .brand { font-size: 12px; }
-      .brand-mark { width: 27px; height: 27px; }
-      .nav { gap: 14px; max-width: 56vw; font-size: 11px; }
-      main { padding-top: 14px; }
-      .hero { border-radius: 22px; }
-      .hero-bottom { align-items: start; flex-direction: column; }
-      .grid.two, .grid.three, .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      #evidence .grid.two, #seoul-open > .grid.two { grid-template-columns: 1fr; }
-      .section-head { margin-top: 25px; align-items: start; flex-direction: column; gap: 4px; }
-      .card { padding: 16px; border-radius: 18px; }
-      .summary-card { padding: 15px; }
-      .flow { grid-template-columns: 1fr; gap: 7px; }
-      .flow-step { min-height: 64px; padding: 10px 13px; flex-direction: row; justify-content: start; text-align: left; }
-      .flow-step .icon { flex: 0 0 34px; }
-      .flow-step small { margin-left: auto; text-align: right; }
-      .flow-step:not(:last-child)::after { content: "⌄"; top: auto; bottom: -12px; right: 15px; width: 17px; height: 18px; font-size: 18px; }
-      .evidence { grid-template-columns: 1fr; }
-      .metric { display: flex; align-items: baseline; justify-content: center; gap: 9px; padding: 10px; }
-      .metric b { font-size: 21px; }
-      .timeline { grid-template-columns: 1fr; gap: 15px; }
-      .timeline-item { display: grid; grid-template-columns: 20px 1fr; gap: 0 9px; padding: 0; }
-      .timeline-item::before { grid-row: span 2; margin: 4px 0 0; }
-      .timeline-item:not(:last-child)::after { top: 17px; bottom: -15px; left: 5px; right: auto; width: 2px; height: auto; }
-      .timeline-item b { margin: 0 0 2px; }
-      .activation { grid-template-columns: 1fr; }
-      .tennis-cases, .photo-grid { grid-template-columns: 1fr; }
-      .photo-card img { height: auto; max-height: 290px; object-fit: cover; }
-      .partner-flow { flex-wrap: wrap; justify-content: center; gap: 8px 5px; }
-      .partner-flow span { max-width: 74px; }
-    }
-    @media (max-width: 390px) {
-      .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
-      .nav { max-width: 50vw; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    :root{color-scheme:light;
+--brand:#3182f6;
+--brand-pressed:#1765d1;
+--brand-weak:#e8f3ff;
+--text:#191f28;
+--sub:#4e5968;
+--muted:#6b7684;
+--line:#e5e8eb;
+--canvas:#f9fafb;
+--surface:#fff;
+--radius:20px;
+font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+font-synthesis:none;
+text-rendering:optimizeLegibility;
+-webkit-font-smoothing:antialiased}
+
+    *{box-sizing:border-box}
+html{scroll-behavior:smooth;
+scroll-padding-top:76px}
+body{margin:0;
+background:var(--canvas);
+color:var(--text);
+font-size:15px;
+line-height:1.5}
+a{color:inherit;
+text-decoration:none}
+p{word-break:keep-all}
+.wrap{width:min(100% - 48px,1040px);
+margin-inline:auto}
+.topbar{position:sticky;
+z-index:5;
+top:0;
+background:rgba(255,255,255,.96);
+border-bottom:1px solid var(--line);
+backdrop-filter:blur(12px)}
+.topbar-inner{height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px}
+.brand{display:flex;
+align-items:center;
+gap:9px;
+font-size:14px;
+font-weight:700;
+letter-spacing:-.02em;
+white-space:nowrap}
+.brand-mark{display:grid;
+width:32px;
+height:32px;
+place-items:center;
+border-radius:12px;
+color:#fff;
+background:var(--brand)}
+.nav{display:flex;
+gap:8px;
+overflow-x:auto;
+scrollbar-width:none;
+color:var(--sub);
+font-size:13px;
+font-weight:600;
+white-space:nowrap}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:grid;
+min-height:44px;
+place-items:center;
+padding:0 10px;
+border-radius:12px}
+.nav a:hover,.nav a:focus-visible{color:var(--brand-pressed);
+background:var(--brand-weak)}
+main{padding:28px 0 72px}
+section{margin-top:44px;
+scroll-margin-top:84px}
+.hero{padding:clamp(28px,6vw,56px);
+background:var(--surface);
+border:1px solid var(--line);
+border-radius:32px}
+.eyebrow{display:inline-flex;
+align-items:center;
+gap:8px;
+padding:7px 11px;
+border-radius:999px;
+color:var(--brand-pressed);
+background:var(--brand-weak);
+font-size:12px;
+font-weight:700}
+.hero h1{margin:20px 0 12px;
+max-width:720px;
+font-size:clamp(34px,6vw,56px);
+font-weight:700;
+line-height:1.2;
+letter-spacing:-.04em}
+.hero h1 span{color:var(--brand)}
+.lead{max-width:680px;
+margin:0;
+color:var(--sub);
+font-size:17px;
+line-height:1.55}
+.hero-bottom{display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+margin-top:32px}
+.date{color:var(--muted);
+font-size:12px}
+.cta{display:inline-flex;
+min-height:48px;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding:0 18px;
+border-radius:16px;
+color:white;
+background:var(--brand);
+font-size:15px;
+font-weight:700;
+transition:background .2s}
+.cta:hover,.cta:focus-visible{background:var(--brand-pressed)}
+.section-head{display:flex;
+align-items:end;
+justify-content:space-between;
+gap:16px;
+margin:0 0 16px}
+.section-head h2{margin:0;
+font-size:24px;
+line-height:1.3;
+letter-spacing:-.03em}
+.section-head p{margin:0;
+color:var(--muted);
+font-size:14px}
+.card,.tennis-case{min-width:0;
+padding:24px;
+background:var(--surface);
+border:1px solid var(--line);
+border-radius:var(--radius)}
+.grid{display:grid;
+gap:16px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.summary-card{padding:22px}
+.icon{display:grid;
+width:44px;
+height:44px;
+flex:0 0 44px;
+place-items:center;
+border-radius:14px;
+color:var(--brand);
+background:var(--brand-weak)}
+.summary-card h3,.card h3{margin:16px 0 6px;
+font-size:18px;
+line-height:1.4;
+letter-spacing:-.02em}
+.summary-card p,.card p{margin:0;
+color:var(--sub);
+font-size:15px;
+line-height:1.55}
+.flow{display:grid;
+grid-template-columns:repeat(5,minmax(0,1fr));
+gap:12px}
+.flow-step{position:relative;
+display:flex;
+min-height:148px;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:12px;
+padding:18px 10px;
+text-align:center;
+background:var(--surface);
+border:1px solid var(--line);
+border-radius:20px}
+.flow-step:not(:last-child)::after{content:"›";
+position:absolute;
+right:-15px;
+top:calc(50% - 12px);
+z-index:1;
+width:24px;
+color:var(--muted);
+background:var(--canvas);
+font-size:22px;
+text-align:center}
+.flow-step strong{font-size:15px;
+line-height:1.4}
+.flow-step small{color:var(--muted);
+font-size:13px}
+.callout{padding:20px 22px;
+border-radius:20px;
+background:var(--brand-weak);
+color:var(--text)}
+.callout strong{display:block;
+margin-bottom:5px;
+font-size:17px}
+.callout p{margin:0;
+color:var(--sub);
+font-size:15px}
+.evidence{display:grid;
+grid-template-columns:132px 1fr;
+align-items:start;
+gap:20px}
+.metric{padding:18px 12px;
+text-align:center;
+border-radius:16px;
+color:var(--brand-pressed);
+background:var(--brand-weak)}
+.metric b{display:block;
+font-size:27px;
+line-height:1.2;
+font-variant-numeric:proportional-nums}
+.metric span{font-size:12px;
+font-weight:600}
+.evidence h3{margin-top:0}
+.chips{display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:16px}
+.chip{padding:7px 11px;
+border:1px solid var(--line);
+border-radius:999px;
+color:var(--sub);
+font-size:13px;
+font-weight:600}
+.mini-label{color:var(--muted);
+font-size:12px;
+font-weight:600}
+.pill{display:inline-flex;
+min-height:32px;
+align-items:center;
+margin-top:14px;
+padding:0 11px;
+border-radius:999px;
+color:var(--brand-pressed);
+background:var(--brand-weak);
+font-size:13px;
+font-weight:600}
+.tennis-study h3{margin-top:8px}
+.timeline{display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:0}
+.timeline-item{position:relative;
+padding-right:18px}
+.timeline-item::before{content:"";
+display:block;
+width:12px;
+height:12px;
+margin-bottom:16px;
+border:3px solid white;
+border-radius:50%;
+background:var(--brand);
+box-shadow:0 0 0 1px #b8d5ff}
+.timeline-item:not(:last-child)::after{content:"";
+position:absolute;
+top:5px;
+left:13px;
+right:0;
+height:2px;
+background:var(--brand-weak)}
+.timeline-item b{display:block;
+margin-bottom:5px;
+font-size:15px}
+.timeline-item p{margin:0;
+color:var(--sub);
+font-size:14px}
+.tennis-cases{display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:16px}
+.tennis-case .year{color:var(--brand-pressed);
+font-size:13px;
+font-weight:700}
+.tennis-case h3{margin:8px 0;
+font-size:18px}
+.tennis-case p{margin:0;
+color:var(--sub);
+font-size:14px;
+line-height:1.55}
+.photo-grid{display:grid;
+grid-template-columns:1.25fr 1fr 1fr;
+gap:16px;
+margin-top:16px}
+.photo-card{min-width:0;
+overflow:hidden;
+margin:0;
+background:var(--surface);
+border:1px solid var(--line);
+border-radius:20px}
+.photo-card a{display:block}
+.photo-card img{display:block;
+width:100%;
+height:240px;
+object-fit:cover;
+background:#f2f4f6}
+.photo-card figcaption{padding:16px}
+.photo-card strong{display:block;
+margin-bottom:4px;
+font-size:15px}
+.photo-card span{color:var(--muted);
+font-size:13px}
+.source-note{margin:12px 0 0;
+color:var(--muted);
+font-size:13px}
+.source-note a,footer a{color:var(--brand-pressed);
+text-decoration:underline;
+text-underline-offset:3px}
+.product-top{display:flex;
+align-items:start;
+justify-content:space-between;
+gap:10px}
+.product-top h3{margin:0 0 4px}
+.product-type{padding:6px 10px;
+border-radius:999px;
+color:var(--brand-pressed);
+background:var(--brand-weak);
+font-size:12px;
+font-weight:600;
+white-space:nowrap}
+.product-card{padding:16px}
+.product-card .product-image{display:grid;
+min-height:180px;
+place-items:center;
+overflow:hidden;
+margin-bottom:12px;
+border-radius:16px;
+background:#f9fafb}
+.product-card .product-image img{display:block;
+width:100%;
+height:180px;
+object-fit:contain}
+.product-origin{margin:0 0 12px!important;
+color:var(--muted)!important;
+font-size:12px!important}
+.product-card p{font-size:14px}
+.product-card .fact{margin-top:14px;
+padding-top:12px;
+border-top:1px solid var(--line);
+color:var(--sub);
+font-size:13px;
+line-height:1.45}
+.activation{display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px}
+.activation-row{display:flex;
+min-height:76px;
+align-items:center;
+gap:12px;
+padding:14px;
+border-radius:16px;
+background:var(--canvas)}
+.activation-row h3{margin:0 0 3px;
+font-size:15px}
+.activation-row p{font-size:13px}
+.partner-flow{display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+margin-top:16px;
+padding:16px;
+border-radius:16px;
+background:var(--canvas)}
+.partner-flow span{text-align:center;
+font-size:13px;
+font-weight:600}
+.partner-flow i{color:var(--muted);
+font-style:normal}
+.pitch{padding:22px;
+border-radius:20px;
+background:var(--brand-weak);
+color:var(--text)}
+.pitch .mini-label{color:var(--brand-pressed)}
+.pitch blockquote{margin:12px 0 0;
+font-size:19px;
+font-weight:700;
+line-height:1.5;
+letter-spacing:-.02em;
+word-break:keep-all}
+.priority{display:flex;
+align-items:center;
+gap:14px;
+padding:16px 0;
+border-bottom:1px solid var(--line)}
+.priority:last-child{border-bottom:0;
+padding-bottom:0}
+.rank{display:grid;
+width:36px;
+height:36px;
+flex:0 0 36px;
+place-items:center;
+border-radius:12px;
+color:var(--brand-pressed);
+background:var(--brand-weak);
+font-size:15px;
+font-weight:700}
+.priority b{display:block;
+font-size:16px}
+.priority small{display:block;
+color:var(--sub);
+font-size:14px}
+footer{padding:28px 0 8px;
+color:var(--muted);
+text-align:center;
+font-size:13px}
+svg{display:block;
+width:20px;
+height:20px;
+fill:none;
+stroke:currentColor;
+stroke-width:1.7;
+stroke-linecap:round;
+stroke-linejoin:round}
+a:focus-visible{outline:3px solid var(--brand);
+outline-offset:3px}
+
+    @media(max-width:760px){.wrap{width:min(100% - 40px,560px)}
+.topbar-inner{height:56px}
+.brand{font-size:13px}
+.brand-mark{width:30px;
+height:30px}
+.nav{gap:2px;
+max-width:58vw;
+font-size:12px}
+.nav a{padding:0 8px}
+main{padding-top:20px}
+.hero{padding:28px 24px;
+border-radius:24px}
+.hero h1{font-size:36px}
+.lead{font-size:16px}
+.hero-bottom{align-items:flex-start;
+flex-direction:column;
+margin-top:24px}
+.section-head{align-items:flex-start;
+flex-direction:column;
+gap:5px;
+margin-bottom:14px}
+.section-head h2{font-size:22px}
+.section-head p{font-size:14px}
+.grid.two,.grid.three,.grid.four,.tennis-cases,.photo-grid{grid-template-columns:1fr}
+.grid{gap:12px}
+.card,.tennis-case{padding:20px;
+border-radius:20px}
+.summary-card{padding:20px}
+.flow{grid-template-columns:1fr;
+gap:8px}
+.flow-step{min-height:76px;
+flex-direction:row;
+justify-content:flex-start;
+gap:14px;
+padding:14px;
+text-align:left;
+border-radius:16px}
+.flow-step .icon{width:40px;
+height:40px;
+flex:0 0 40px}
+.flow-step strong{font-size:15px}
+.flow-step small{margin-left:auto;
+text-align:right}
+.flow-step:not(:last-child)::after{content:"⌄";
+top:auto;
+right:18px;
+bottom:-15px;
+width:20px;
+background:var(--surface);
+font-size:18px}
+.evidence{grid-template-columns:1fr;
+gap:16px}
+.metric{display:flex;
+align-items:baseline;
+justify-content:center;
+gap:10px;
+padding:12px}
+.metric b{font-size:24px}
+.timeline{grid-template-columns:1fr;
+gap:16px}
+.timeline-item{display:grid;
+grid-template-columns:20px 1fr;
+gap:0 10px;
+padding:0}
+.timeline-item::before{grid-row:span 2;
+margin:4px 0 0}
+.timeline-item:not(:last-child)::after{top:18px;
+bottom:-16px;
+left:5px;
+right:auto;
+width:2px;
+height:auto}
+.timeline-item b{margin:0 0 3px}
+.photo-card img{height:auto;
+max-height:360px;
+aspect-ratio:4/3;
+object-fit:cover}
+.product-card .product-image,.product-card .product-image img{min-height:220px;
+height:220px}
+.activation{grid-template-columns:1fr}
+.partner-flow{flex-wrap:wrap;
+justify-content:center;
+gap:10px}
+.partner-flow span{max-width:90px}
+.pitch blockquote{font-size:18px}
+}
+
+    @media(max-width:390px){.wrap{width:calc(100% - 32px)}
+.nav{max-width:52vw}
+.hero{padding:24px 20px}
+.hero h1{font-size:32px}
+.card,.tennis-case{padding:18px}
+.partner-flow{gap:8px}
+.partner-flow span{max-width:72px;
+font-size:12px}
+}
+
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.cta{transition:none}
+}
+
   </style>
 </head>
 <body>
@@ -181,7 +535,7 @@
   </header>
   <main id="top" class="wrap">
     <section class="hero" aria-labelledby="main-title">
-      <span class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg> ATHLETE COOLING TECHNOLOGY</span>
+      <span class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg> Athlete cooling technology</span>
       <h1 id="main-title">손바닥 냉각을<br><span>테니스의 휴식 시간</span>에</h1>
       <p class="lead">Palm Cooling은 손바닥의 혈류를 이용해 운동 중 열을 배출하는 기술입니다. 체인지오버를 활용하면 경기 흐름을 끊지 않고 선수 냉각과 회복을 지원할 수 있습니다.</p>
       <div class="hero-bottom"><span class="date">기술·시장 검토 요약 · 2026.09.27</span><a class="cta" href="#seoul-open">서울오픈 적용안 보기 <span aria-hidden="true">→</span></a></div>
