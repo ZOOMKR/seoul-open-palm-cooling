@@ -86,6 +86,19 @@
     .timeline-item:not(:last-child)::after { content: ""; position: absolute; top: 5px; left: 13px; right: 0; height: 2px; background: #dce8f8; }
     .timeline-item b { display: block; margin-bottom: 4px; font-size: 13px; }
     .timeline-item p { font-size: 11px; }
+    .tennis-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .tennis-case { padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+    .tennis-case .year { color: var(--blue-dark); font-size: 11px; font-weight: 850; }
+    .tennis-case h3 { margin: 6px 0; font-size: 15px; }
+    .tennis-case p { margin: 0; color: var(--muted); font-size: 12px; }
+    .photo-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .photo-card { min-width: 0; overflow: hidden; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+    .photo-card a { display: block; }
+    .photo-card img { display: block; width: 100%; height: 220px; object-fit: cover; background: #edf1f5; }
+    .photo-card figcaption { padding: 12px 14px 14px; }
+    .photo-card strong { display: block; margin-bottom: 3px; font-size: 12px; }
+    .photo-card span { color: var(--muted); font-size: 10px; }
+    .source-note { margin: 8px 2px 0; color: #8792a0; font-size: 10px; }
     .product-top { display: flex; align-items: start; justify-content: space-between; gap: 8px; }
     .product-top h3 { margin: 0 0 4px; }
     .product-type { color: var(--blue-dark); background: var(--blue-soft); padding: 4px 7px; border-radius: 7px; font-size: 9px; font-weight: 800; white-space: nowrap; }
@@ -139,6 +152,8 @@
       .timeline-item:not(:last-child)::after { top: 17px; bottom: -15px; left: 5px; right: auto; width: 2px; height: auto; }
       .timeline-item b { margin: 0 0 2px; }
       .activation { grid-template-columns: 1fr; }
+      .tennis-cases, .photo-grid { grid-template-columns: 1fr; }
+      .photo-card img { height: auto; max-height: 290px; object-fit: cover; }
       .partner-flow { flex-wrap: wrap; justify-content: center; gap: 8px 5px; }
       .partner-flow span { max-width: 74px; }
     }
@@ -157,7 +172,7 @@
         PALM COOLING <span style="color:#a0a8b3">×</span> SEOUL OPEN
       </a>
       <nav class="nav" aria-label="페이지 목차">
-        <a href="#principle">원리</a><a href="#evidence">근거</a><a href="#market">시장</a><a href="#seoul-open">서울오픈</a>
+        <a href="#principle">원리</a><a href="#evidence">근거</a><a href="#tennis-practice">테니스</a><a href="#market">시장</a><a href="#seoul-open">서울오픈</a>
       </nav>
     </div>
   </header>
@@ -208,6 +223,30 @@
           <span class="mini-label">직접적인 테니스 연구 · 2015</span><h3>체인지오버에서 약 60초 적용</h3><p>남자 대학 테니스 선수 12명이 고온 환경에서 모의 경기를 하고, 홀수 게임 종료 후 양손을 10°C로 냉각했습니다. 심부체온·심박수 관리, RPE 감소, 그라운드스트로크 정확도 유지가 보고됐습니다.</p><div class="pill">경기 → Changeover → 냉각 → 경기</div>
         </article>
       </div>
+    </section>
+
+    <section id="tennis-practice">
+      <div class="section-head"><h2>테니스 현장 도입</h2><p>경기 중 사용 사례와 연맹 파일럿이 이어집니다</p></div>
+      <div class="tennis-cases">
+        <article class="tennis-case"><span class="year">2015 · 테니스 연구</span><h3>체인지오버에서 약 60초 냉각</h3><p>남자 대학 선수 12명의 고온 모의 경기에서 홀수 게임 뒤 양손 냉각을 적용했습니다. 심부체온·심박수·RPE와 스트로크 정확도를 관찰했습니다.</p></article>
+        <article class="tennis-case"><span class="year">2024 · Atlanta Open</span><h3>대회 선수에게 CoolMitt 제공</h3><p>대회 기간 선수들이 사용할 수 있도록 장비를 배치했습니다. 짧은 휴식에 실제 제품을 활용한 프로테니스 운영 사례입니다.</p></article>
+        <article class="tennis-case"><span class="year">2026 · Tennis Australia</span><h3>Kühler 현장 파일럿</h3><p>Australian Open의 AO StartUps 선정 후 National Tennis Academy에서 훈련, 매치플레이 시뮬레이션, 회복 프로토콜로 테스트합니다.</p></article>
+      </div>
+      <div class="photo-grid" aria-label="Palm Cooling 제품과 테니스 사용 사진">
+        <figure class="photo-card">
+          <a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/ATP.png?v=1722446054&amp;width=1600" alt="2024 Atlanta Open에서 선수가 경기 중 CoolMitt 냉각 장치를 사용하는 모습" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Atlanta Open 실사용 장면</strong><span>사진: CoolMitt 뉴스 페이지 · 보도: Atlanta News First</span></figcaption>
+        </figure>
+        <figure class="photo-card">
+          <a href="https://coolmitt.com/products/coolmitt" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/coolmitt_website_v2_1.jpg?v=1713341328&amp;width=1200" alt="순환수 쿨링 유닛과 손바닥용 CoolMitt 장갑 제품 사진" loading="lazy" decoding="async"></a>
+          <figcaption><strong>CoolMitt 제품</strong><span>순환수 방식 · 사진: CoolMitt 공식 제품 페이지</span></figcaption>
+        </figure>
+        <figure class="photo-card">
+          <a href="https://getkuhler.com/products/kuhler" target="_blank" rel="noopener noreferrer"><img src="https://getkuhler.com/cdn/shop/files/kuhler-22-small.jpg?crop=center&amp;height=940&amp;v=1773077888&amp;width=940" alt="손에 쥐고 사용하는 파란색 Kühler 휴대형 손바닥 냉각기" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Kühler 휴대형 제품</strong><span>전자식 능동 냉각 · 사진: Kühler 공식 제품 페이지</span></figcaption>
+        </figure>
+      </div>
+      <p class="source-note">대회 운영·파일럿 설명: <a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer">Atlanta News First</a> · <a href="https://ausopen.com/articles/news/ao-startups-spotlight-kuhler" target="_blank" rel="noopener noreferrer">Australian Open / AO StartUps</a></p>
     </section>
 
     <section aria-label="테니스와의 적합성">
