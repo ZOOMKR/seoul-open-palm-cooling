@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1124 920" role="img" aria-labelledby="title desc">
+  <title id="title">The palm, under the skin</title>
+  <desc id="desc">손바닥 AVA 혈관이 체온 조절 과정에서 열을 피부 표면으로 보내는 원리를 설명하는 그림</desc>
+  <rect width="1124" height="920" fill="#f8f7f4"/>
+  <rect x="14" y="14" width="1096" height="892" fill="none" stroke="#d9d5cd" stroke-width="2"/>
+  <text x="54" y="68" fill="#7a817f" font-family="Arial,sans-serif" font-size="20" letter-spacing="3">FIG. 1</text>
+  <text x="1060" y="68" text-anchor="end" fill="#7a817f" font-family="Arial,sans-serif" font-size="20" letter-spacing="2">THE PALM, UNDER THE SKIN</text>
+  <path d="M258 785 L228 578 Q223 544 204 524 L151 466 Q132 446 111 464 Q92 480 107 504 L180 610 Q194 630 205 650 L255 785 Z" fill="#fff" stroke="#303735" stroke-width="3"/>
+  <path d="M218 623 L210 317 Q208 275 235 268 Q265 260 269 304 L279 483 Q281 501 294 501 Q307 500 307 480 L304 245 Q303 207 332 202 Q360 198 365 240 L369 480 Q370 500 383 500 Q397 499 397 478 L396 286 Q396 248 423 246 Q452 244 454 282 L451 489 Q451 509 465 510 Q479 510 482 489 L492 369 Q495 337 521 341 Q549 345 545 378 L518 581 Q510 643 474 683 L459 785 Z" fill="#fff" stroke="#303735" stroke-width="3"/>
+  <path d="M221 355 Q244 363 267 355 M307 313 Q332 321 362 313 M309 397 Q333 405 365 397 M398 338 Q426 346 452 338 M399 420 Q426 428 451 420 M477 443 Q501 451 526 443" fill="none" stroke="#c9c2b8" stroke-width="2"/>
+  <ellipse cx="365" cy="565" rx="105" ry="76" fill="#e8b4a3" opacity=".22"/>
+  <circle cx="365" cy="565" r="27" fill="none" stroke="#303735" stroke-width="2" stroke-dasharray="5 6"/>
+  <path d="M389 545 L658 279 M392 566 L658 590" fill="none" stroke="#9a9e99" stroke-width="1.5"/>
+  <text x="826" y="116" text-anchor="middle" fill="#7a817f" font-family="Arial,sans-serif" font-size="20" letter-spacing="2">BODY COOL · CLOSED</text>
+  <circle cx="826" cy="292" r="164" fill="#fff" stroke="#303735" stroke-width="3"/>
+  <path d="M672 225 Q683 214 695 225 Q707 214 719 225 Q731 214 743 225 Q755 214 767 225 Q779 214 791 225 Q803 214 815 225 Q827 214 839 225 Q851 214 863 225 Q875 214 887 225 Q899 214 911 225 Q923 214 935 225 Q947 214 959 225 Q971 214 983 225" fill="none" stroke="#303735" stroke-width="2"/>
+  <rect x="664" y="229" width="324" height="37" fill="#e6dbcc"/>
+  <rect x="664" y="266" width="324" height="42" fill="#f1e9e0"/>
+  <rect x="664" y="308" width="324" height="22" fill="#c8866e"/>
+  <rect x="664" y="330" width="324" height="54" fill="#fff"/>
+  <rect x="664" y="384" width="324" height="22" fill="#506657"/>
+  <path d="M695 319h23m-23 0 10-8m-10 8 10 8m242-8h23m-23 0 10-8m-10 8 10 8" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M764 345l-8 13m76-13-8 13m76-13-8 13" fill="none" stroke="#c7c0b6" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 8"/>
+  <text x="826" y="492" text-anchor="middle" fill="#b94f30" font-family="Arial,sans-serif" font-size="20" letter-spacing="2">BODY WARM · OPEN</text>
+  <circle cx="826" cy="672" r="164" fill="#fff" stroke="#303735" stroke-width="3"/>
+  <path d="M672 605 Q683 594 695 605 Q707 594 719 605 Q731 594 743 605 Q755 594 767 605 Q779 594 791 605 Q803 594 815 605 Q827 594 839 605 Q851 594 863 605 Q875 594 887 605 Q899 594 911 605 Q923 594 935 605 Q947 594 959 605 Q971 594 983 605" fill="none" stroke="#303735" stroke-width="2"/>
+  <rect x="664" y="609" width="324" height="37" fill="#e6dbcc"/>
+  <rect x="664" y="646" width="324" height="42" fill="#f1e9e0"/>
+  <rect x="664" y="688" width="324" height="22" fill="#b94f30"/>
+  <rect x="664" y="710" width="324" height="54" fill="#fff"/>
+  <rect x="664" y="764" width="324" height="22" fill="#506657"/>
+  <path d="M695 699h23m-23 0 10-8m-10 8 10 8m242-8h23m-23 0 10-8m-10 8 10 8" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M754 747c-12-18 12-20 0-38m70 38c-12-18 12-20 0-38m70 38c-12-18 12-20 0-38" fill="none" stroke="#b94f30" stroke-width="5" stroke-linecap="round"/>
+  <path d="M744 680V625m80 55V625m80 55V625" fill="none" stroke="#b94f30" stroke-width="6" opacity=".7"/>
+  <path d="M735 637l9-12 9 12m62 0 9-12 9 12m62 0 9-12 9 12" fill="none" stroke="#b94f30" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="907" y="752" fill="#b94f30" font-family="Arial,sans-serif" font-size="15">AVA</text>
+  <path d="M885 746h16" stroke="#b94f30" stroke-width="2"/>
+  <text x="54" y="852" fill="#303735" font-family="Arial,sans-serif" font-size="21" letter-spacing="1">HEAT VESSELS (AVA) OPEN WHEN YOU HEAT UP.</text>
+  <text x="54" y="884" fill="#303735" font-family="Arial,sans-serif" font-size="21" letter-spacing="1">THEY HELP MOVE HEAT TOWARD THE SKIN.</text>
+</svg>

@@ -271,7 +271,7 @@ font-size:15px}
 color:var(--sub);
 font-size:14px}
 .tennis-cases{display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
+grid-template-columns:repeat(2,minmax(0,1fr));
 gap:16px}
 .tennis-case .year{color:var(--brand-pressed);
 font-size:13px;
@@ -282,6 +282,13 @@ font-size:18px}
 color:var(--sub);
 font-size:14px;
 line-height:1.55}
+.tennis-case a{display:inline-block;
+margin-top:10px;
+color:var(--brand-pressed);
+font-size:13px;
+font-weight:600;
+text-decoration:underline;
+text-underline-offset:3px}
 .photo-grid{display:grid;
 grid-template-columns:minmax(0,760px);
 justify-content:center;
@@ -310,6 +317,41 @@ font-size:13px}
 color:var(--muted);
 font-size:13px}
 .source-note a,footer a{color:var(--brand-pressed);
+text-decoration:underline;
+text-underline-offset:3px}
+.ava-figure{max-width:760px;
+margin:20px auto 0;
+overflow:hidden;
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px}
+.ava-figure>a{display:block}
+.ava-figure img{display:block;
+width:100%;
+height:auto}
+.ava-figure figcaption{padding:12px 16px;
+color:var(--muted);
+font-size:13px}
+.global-cases{display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:16px}
+.global-case{padding:20px;
+background:var(--surface);
+border:1px solid var(--line);
+border-radius:20px}
+.global-case .year{color:var(--brand-pressed);
+font-size:13px;
+font-weight:700}
+.global-case h3{margin:7px 0;
+font-size:17px}
+.global-case p{margin:0;
+color:var(--sub);
+font-size:14px}
+.global-case a{display:inline-block;
+margin-top:10px;
+color:var(--brand-pressed);
+font-size:13px;
+font-weight:600;
 text-decoration:underline;
 text-underline-offset:3px}
 .product-top{display:flex;
@@ -450,7 +492,7 @@ gap:5px;
 margin-bottom:14px}
 .section-head h2{font-size:22px}
 .section-head p{font-size:14px}
-.grid.two,.grid.three,.grid.four,.tennis-cases,.photo-grid{grid-template-columns:1fr}
+.grid.two,.grid.three,.grid.four,.tennis-cases,.photo-grid,.global-cases{grid-template-columns:1fr}
 .grid{gap:12px}
 .card,.tennis-case{padding:20px;
 border-radius:20px}
@@ -556,7 +598,7 @@ font-size:12px}
       <div class="grid two">
         <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7c0 3 2 5 7 5s7 2 7 5M5 17c0-3 2-5 7-5s7-2 7-5"/></svg></span><h3>체열 제거와 운동 연구</h3><p>심부체온 약 38.8°C, 냉각면 10°C 조건에서 최대 약 42W 열 제거가 측정됐습니다. Stanford 연구에서는 운동 지속시간 증가와 저항운동량 변화가, 2025년 반복 스프린트 연구에서는 후반 기록 저하 감소와 고속 유지 횟수 증가가 보고됐습니다.</p></article>
         <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>테니스의 휴식 시간과 맞습니다</h3><p>2015년 고온 모의 경기에서 남자 대학선수 12명이 홀수 게임 뒤 양손을 10°C로 약 60초 냉각했습니다. 체심부체온·심박수 관리, RPE 감소, 스트로크 정확도 유지가 보고됐습니다. 장시간 경기·반복 고강도·야외 더위와 약 90초 Changeover가 적용에 맞습니다.</p></article>
-        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 5-7"/></svg></span><h3>선수 사용과 파일럿이 이어집니다</h3><p>2024 Atlanta Open은 CoolMitt를 제공했습니다. Djokovic는 2025 Miami Open에서 Cooling Glove, 2026 Australian Open에서 KYLA 프로토타입을 사용했고, 2026 Tennis Australia는 Kühler를 테스트합니다. 2026년 Therabody CryoTherm Palm 출시와 함께 대형 시스템에서 개인 휴대형 제품으로 확대되고 있습니다.</p></article>
+        <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 5-7"/></svg></span><h3>선수 사용과 파일럿이 이어집니다</h3><p>Atlanta Open은 참가 선수 누구나 CoolMitt를 이용할 수 있게 했고, Djokovic의 KYLA 프로토타입 사용과 Tennis Australia 아카데미의 Kühler 파일럿도 확인됩니다. 이와 별도로 Miami의 냉각 장갑은 넓은 의미의 손 냉각 사례입니다. 타 종목에서는 올림픽 레슬링, NCAA·NHL 경기, USA Cycling 연구 협업, 잉글랜드 대표팀 훈련 캠프까지 활용이 넓어지고 있습니다.</p></article>
         <article class="card summary-card"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M2 19h20"/></svg></span><h3>서울오픈 파트너십 기회</h3><p>2026 ATP Challenger 125 서울오픈에서 선수 라운지·연습·회복 공간에 장비를 두고, 규정이 허용하면 경기 휴식에도 적용할 수 있습니다. 선수 서비스와 브랜드 피드백·아시아 사용 레퍼런스를 위해 Official Athlete Cooling Partner 형태의 기술 파일럿을 제안합니다.</p></article>
       </div>
     </section>
@@ -571,6 +613,7 @@ font-size:12px}
         <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 3-6 5-9Z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg></span><strong>열을 외부로<br>배출</strong><small>몸의 열 부담 완화</small></div>
       </div>
       <div class="callout" style="margin-top:12px"><strong>왜 손바닥일까요?</strong><p>손바닥·발바닥의 털 없는 피부에는 AVA(동정맥 문합)가 발달해 있어 혈류를 통한 열 교환에 활용될 수 있습니다.</p></div>
+      <figure class="ava-figure"><a href="assets/palm-ava-infographic.svg" target="_blank" rel="noopener noreferrer"><img src="assets/palm-ava-infographic.svg" alt="손바닥의 AVA 혈관이 열을 배출하는 상태와 닫힌 상태를 비교한 개념도" loading="lazy" decoding="async"></a><figcaption>제공 이미지의 구도와 설명을 바탕으로 재구성한 AVA 개념도 · 탭하면 크게 볼 수 있습니다</figcaption></figure>
     </section>
 
     <section id="evidence">
@@ -596,8 +639,9 @@ font-size:12px}
       <div class="section-head"><h2>테니스 현장 도입</h2><p>경기 중 사용 사례와 연맹 파일럿이 이어집니다</p></div>
       <div class="tennis-cases">
         <article class="tennis-case"><span class="year">2015 · 테니스 연구</span><h3>체인지오버에서 약 60초 냉각</h3><p>남자 대학 선수 12명의 고온 모의 경기에서 홀수 게임 뒤 양손 냉각을 적용했습니다. 심부체온·심박수·RPE와 스트로크 정확도를 관찰했습니다.</p></article>
-        <article class="tennis-case"><span class="year">2024 · Atlanta Open</span><h3>대회 선수에게 CoolMitt 제공</h3><p>대회 기간 선수들이 사용할 수 있도록 장비를 배치했습니다. 짧은 휴식에 실제 제품을 활용한 프로테니스 운영 사례입니다.</p></article>
-        <article class="tennis-case"><span class="year">2026 · Tennis Australia</span><h3>Kühler 현장 파일럿</h3><p>Australian Open의 AO StartUps 선정 후 National Tennis Academy에서 훈련, 매치플레이 시뮬레이션, 회복 프로토콜로 테스트합니다.</p></article>
+        <article class="tennis-case"><span class="year">2024 · Atlanta Open</span><h3>모든 선수에게 사용 기회 제공</h3><p>CoolMitt를 대회 참가 선수 누구나 쓸 수 있도록 현장에 배치했고 복식 선수 Hans Hach의 사용도 보도됐습니다. 상업적 공식 스폰서십으로 확인된 것은 아닙니다.</p><a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer">현장 보도 보기 ↗</a></article>
+        <article class="tennis-case"><span class="year">2026 · Djokovic × KYLA</span><h3>선수의 프로토타입 사용</h3><p>KYLA와 복수 매체 보도에 따르면 Djokovic가 Australian Open 경기 체인지오버에서 프로토타입을 사용했습니다. 대회 공식 도입이나 유료 후원 관계를 뜻하지는 않습니다.</p><a href="https://getkyla.com/en-no/blogs/journal/novak-djokovic-and-the-changeover" target="_blank" rel="noopener noreferrer">KYLA의 사용 사례 설명 ↗</a></article>
+        <article class="tennis-case"><span class="year">2026 · Tennis Australia</span><h3>Kühler 공식 아카데미 파일럿</h3><p>National Tennis Academy에서 훈련, 매치플레이 시뮬레이션, 회복 프로토콜에 적용합니다. Australian Open 본선 경기에서의 선수 제공 사례와는 구분됩니다.</p><a href="https://ausopen.com/articles/news/ao-startups-spotlight-kuhler" target="_blank" rel="noopener noreferrer">Australian Open 공식 발표 ↗</a></article>
       </div>
       <div class="photo-grid" aria-label="Palm Cooling 테니스 경기 실사용 사진">
         <figure class="photo-card">
@@ -605,7 +649,18 @@ font-size:12px}
           <figcaption><strong>Atlanta Open 실사용 장면</strong><span>사진: CoolMitt 뉴스 페이지 · 보도: Atlanta News First</span></figcaption>
         </figure>
       </div>
-      <p class="source-note">대회 운영·파일럿 설명: <a href="https://www.atlantanewsfirst.com/2024/07/27/athletes-keeping-cool-with-new-technology-atlanta-open/" target="_blank" rel="noopener noreferrer">Atlanta News First</a> · <a href="https://ausopen.com/articles/news/ao-startups-spotlight-kuhler" target="_blank" rel="noopener noreferrer">Australian Open / AO StartUps</a></p>
+      <p class="source-note">Miami Open 2025의 Djokovic 냉각 장갑은 전문 Palm Cooling 장치가 아닌 넓은 의미의 경기 중 손 냉각 사례입니다. Atlanta 보도와 <a href="https://www.wired.com/story/palm-cooling-devices/" target="_blank" rel="noopener noreferrer">WIRED의 종목별 현장 사례</a>를 함께 참고했습니다.</p>
+    </section>
+
+    <section aria-label="다른 종목의 Palm Cooling 도입 사례">
+      <div class="section-head"><h2>다른 종목의 실사용 사례</h2><p>대회 사용, 현장 협업, 연구 파일럿을 구분해 봅니다</p></div>
+      <div class="global-cases">
+        <article class="global-case"><span class="year">2024 · Paris Olympics / Wrestling</span><h3>USA Wrestling × CoolMitt</h3><p>미국 레슬링 대표팀은 Paris 올림픽 기간 CoolMitt를 사용했습니다. 협력은 Olympic Trials에서 시작해 이후 공식 파트너십으로 이어졌습니다.</p><a href="https://www.themat.com/news/2024/september/03/usa-wrestling-partners-with-coolmitt-to-combat-paris-heat-maximize-wrestler-performance-at-summer-olympics" target="_blank" rel="noopener noreferrer">USA Wrestling 발표 ↗</a></article>
+        <article class="global-case"><span class="year">2024 · NCAA / NHL</span><h3>Apex Narwhals의 경기 중 사용</h3><p>South Carolina 여자농구 선수들은 NCAA 결승을 포함한 경기 타임아웃에 사용했고, Edmonton Oilers 선수들은 NHL 벤치와 피리어드 사이에 활용한 것으로 취재됐습니다.</p><a href="https://www.wired.com/story/palm-cooling-devices/" target="_blank" rel="noopener noreferrer">WIRED 현장 취재 ↗</a></article>
+        <article class="global-case"><span class="year">2026 · England Football</span><h3>Therabody CryoTherm Palm</h3><p>잉글랜드 대표팀은 월드컵 전 훈련 캠프에서 CryoTherm Palm을 사용했습니다. BBC는 대회 예정된 워터 브레이크 활용 계획도 보도했습니다.</p><a href="https://www.bbc.co.uk/sport/football/articles/cj0p0e90z9vo" target="_blank" rel="noopener noreferrer">BBC 보도 ↗</a> · <a href="https://www.therabody.co.uk/blogs/news/therabody-launches-cryotherm%E2%84%A2-palm-its-first-thermoregulation-performance-device-bringing-science-backed-palm-cooling-to-manage-heat-on-sports-biggest-stage" target="_blank" rel="noopener noreferrer">Therabody 발표 ↗</a></article>
+        <article class="global-case"><span class="year">2024 · USA Cycling</span><h3>선수 테스트와 공동 연구</h3><p>USA Cycling과 CoolMitt는 국가대표급 선수 제품 테스트와 냉각 기술의 단기·장기 효과를 살피는 연구 협업을 발표했습니다.</p><a href="https://usacycling.org/article/coolmitt-and-usa-cycling-team-up-to-explore-the-impact-of-cooling-technology-on-athletes" target="_blank" rel="noopener noreferrer">USA Cycling 발표 ↗</a></article>
+        <article class="global-case"><span class="year">2026 · Tour de France</span><h3>타임트라이얼 전 CoolMitt</h3><p>Tom Pidcock가 Stage 16 개인 타임트라이얼 출발 전 워밍업에서 냉각 미트를 사용하는 모습이 현장 보도에 포착됐습니다. 선수의 실사용 사례입니다.</p><a href="https://www.cyclingnews.com/pro-cycling/racing/tom-pidcock-uses-usd995-vasocooling-mitts-in-the-latest-tour-de-france-heat-mitigation-strategy/" target="_blank" rel="noopener noreferrer">Cyclingnews 보도 ↗</a></article>
+      </div>
     </section>
 
     <section aria-label="테니스와의 적합성">
