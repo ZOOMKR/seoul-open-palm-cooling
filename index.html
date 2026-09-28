@@ -272,21 +272,9 @@ font-size:17px}
 .callout p{margin:0;
 color:var(--sub);
 font-size:15px}
-.evidence{display:grid;
-grid-template-columns:132px 1fr;
-align-items:start;
-gap:20px}
-.metric{padding:18px 12px;
-text-align:center;
-border-radius:16px;
-color:var(--brand-pressed);
-background:var(--brand-weak)}
-.metric b{display:block;
-font-size:27px;
-line-height:1.2;
-font-variant-numeric:proportional-nums}
-.metric span{font-size:12px;
-font-weight:600}
+.metric{display:inline-flex;width:max-content;max-width:100%;align-items:baseline;gap:8px;margin:0 0 12px;padding:8px 12px;border-radius:12px;color:var(--brand-pressed);background:var(--brand-weak)}
+.metric b{font-size:24px;line-height:1.2;font-variant-numeric:proportional-nums}
+.metric span{font-size:12px;font-weight:600}
 .evidence-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 .evidence-meta .proof-type{min-height:26px}
 .evidence h3{margin:0 0 8px;font-size:19px;line-height:1.4}
@@ -350,8 +338,10 @@ font-size:13px;
 font-weight:600;
 text-decoration:underline;
 text-underline-offset:3px}
-.ava-figure{max-width:760px;
-margin:20px auto 0;
+.ava-explainer{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:18px;align-items:center;margin-top:16px}
+.ava-explainer .callout{margin:0!important}
+.ava-figure{max-width:none;
+margin:0;
 overflow:hidden;
 background:#fff;
 border:1px solid var(--line);
@@ -413,6 +403,7 @@ border-top:1px solid var(--line);
 color:var(--sub);
 font-size:13px;
 line-height:1.45}
+.seoul-open-grid{align-items:start}
 .activation{display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px}
@@ -536,7 +527,7 @@ body{font-size:16px;line-height:1.6}
 .source-link,.tennis-case a,.global-case a{font-size:14px}
 .related-links a{font-size:13px}
 .mini-label,.source-note{color:var(--sub)}
-.grid.two,.grid.three,.grid.four,.tennis-cases,.global-cases{grid-template-columns:1fr}
+.grid.two,.grid.three,.grid.four,.tennis-cases,.global-cases,.ava-explainer{grid-template-columns:1fr}
 .grid{gap:12px}
 .card,.tennis-case{padding:20px;
 border-radius:20px}
@@ -563,10 +554,7 @@ bottom:-15px;
 width:20px;
 background:var(--surface);
 font-size:18px}
-.evidence{grid-template-columns:1fr;
-gap:16px}
-.metric{display:inline-flex;width:max-content;max-width:100%;align-items:baseline;justify-content:flex-start;gap:8px;margin-bottom:2px;padding:8px 12px;border-radius:12px}
-.metric b{font-size:24px}
+
 .product-card .product-image,.product-card .product-image img{min-height:180px;
 height:180px}
 .activation{grid-template-columns:1fr}
@@ -632,7 +620,7 @@ height:180px}
 
     <section id="seoul-open">
       <div class="section-head"><h2>서울오픈 활용시</h2><p>선수 동선에 맞춘 냉각 파일럿 제안</p></div>
-      <div class="grid two">
+      <div class="grid two seoul-open-grid">
         <article class="card">
           <span class="mini-label">현장 운영</span><h3>선수 동선에 맞춰 배치</h3>
           <div class="activation" style="margin-top:14px">
@@ -673,16 +661,15 @@ height:180px}
         <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6zM9 8h6m-6 4h6m-6 4h6"/></svg></span><strong>냉각면에<br>손바닥 접촉</strong><small>열교환</small></div>
         <div class="flow-step"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 5 5.2 5 9a5 5 0 0 1-10 0c0-3.8 3-6 5-9Z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg></span><strong>열을 외부로<br>배출</strong><small>몸의 열 부담 완화</small></div>
       </div>
-      <div class="callout" style="margin-top:12px"><strong>왜 손바닥일까요?</strong><p>손바닥·발바닥의 털 없는 피부에는 <strong>AVA(동정맥 문합)</strong>가 발달해 있어 혈류를 통한 열 교환을 돕습니다.</p><a class="source-link" href="https://doi.org/10.1080/23328940.2015.1088502" target="_blank" rel="noopener noreferrer">Walløe 2016 · 생리학 리뷰 ↗</a></div>
-      <figure class="ava-figure"><a href="assets/palm-ava-original.png" target="_blank" rel="noopener noreferrer"><img src="assets/palm-ava-original.png" alt="손바닥의 AVA 혈관이 열을 배출하는 상태와 닫힌 상태를 비교한 원본 도식" loading="lazy" decoding="async"></a></figure>
+      <div class="ava-explainer"><div class="callout"><strong>왜 손바닥일까요?</strong><p>손바닥·발바닥의 털 없는 피부에는 <strong>AVA(동정맥 문합)</strong>가 발달해 있어 혈류를 통한 열 교환을 돕습니다.</p><a class="source-link" href="https://doi.org/10.1080/23328940.2015.1088502" target="_blank" rel="noopener noreferrer">Walløe 2016 · 생리학 리뷰 ↗</a></div>
+      <figure class="ava-figure"><a href="assets/palm-ava-original.png" target="_blank" rel="noopener noreferrer"><img src="assets/palm-ava-original.png" alt="손바닥의 AVA 혈관이 열을 배출하는 상태와 닫힌 상태를 비교한 원본 도식" loading="lazy" decoding="async"></a></figure></div>
     </section>
 
     <section id="evidence">
       <div class="section-head"><h2>연구 근거</h2><p>원문 논문과 실험 조건을 함께 확인합니다</p></div>
       <div class="grid two">
         <article class="card evidence">
-          <div class="metric"><b>약 42W</b><span>최대 열 제거율의 평균</span></div>
-          <div><div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Kuennen et al. · 2010</span></div><h3>손바닥에서 열 제거량을 측정했습니다</h3><p>남성 10명이 고온 운동으로 심부체온을 약 38.8°C까지 올린 뒤, 앉아서 10°C 손바닥 냉각을 50분간 적용했습니다. 최대 열 제거율은 평균 <strong>42 ± 12W</strong>였습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20033702/" target="_blank" rel="noopener noreferrer">Kuennen et al. 2010 · PubMed ↗</a></div>
+          <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Kuennen et al. · 2010</span></div><h3>손바닥에서 열 제거량을 측정했습니다</h3><div class="metric"><b>약 42W</b><span>최대 열 제거율의 평균</span></div><p>남성 10명이 고온 운동으로 심부체온을 약 38.8°C까지 올린 뒤, 앉아서 10°C 손바닥 냉각을 50분간 적용했습니다. 최대 열 제거율은 평균 <strong>42 ± 12W</strong>였습니다.</p><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20033702/" target="_blank" rel="noopener noreferrer">Kuennen et al. 2010 · PubMed ↗</a>
         </article>
         <article class="card">
           <div class="evidence-meta"><span class="proof-type">연구 결과</span><span class="mini-label">Grahn, Cao & Heller · 2005</span></div><h3>고온 운동에서 냉각과 음압을 결합</h3><p>40°C 트레드밀 운동 중 한 손에 18~22°C 냉각과 음압을 적용했습니다. 평균 운동 지속시간은 <strong>32.3분에서 46.1분</strong>으로 늘었고 식도온도 상승 속도는 낮아졌습니다.</p><a class="source-link" href="https://doi.org/10.1152/japplphysiol.00093.2005" target="_blank" rel="noopener noreferrer">Grahn et al. 2005 · 논문 ↗</a>
@@ -736,12 +723,12 @@ height:180px}
 
     <section id="products" aria-label="주요 제품">
       <div class="section-head"><h2>주요 제품 한눈에 보기</h2><p>방식과 테니스 관련 사례 비교</p></div>
-      <div class="grid four">
+      <div class="grid three product-grid">
         <article class="card product-card"><a class="product-image" href="https://coolmitt.com/products/coolmitt" target="_blank" rel="noopener noreferrer"><img src="https://coolmitt.com/cdn/shop/files/coolmitt_website_v2_1.jpg?v=1713341328&amp;width=900" alt="CoolMitt 순환수 쿨링 장치와 손바닥 냉각 미트" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>CoolMitt</h3><p>물 순환식 냉각</p></div><span class="product-type">수랭</span></div><div class="fact"><strong>Atlanta Open</strong> 선수 이용 제공 사례</div></article>
         <article class="card product-card"><a class="product-image" href="https://www.therabody.com/products/cryotherm-palm" target="_blank" rel="noopener noreferrer"><img src="https://www.therabody.com/cdn/shop/files/CryoTherm-Palm-PDP-Hero-11.webp" alt="Therabody CryoTherm Palm 휴대형 냉각 장치" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>CryoTherm Palm</h3><p>전자식 능동 냉각</p></div><span class="product-type">휴대형</span></div><div class="fact"><strong>8° / 12° / 16°C</strong> 설정 · USB-C 충전<br><strong>잉글랜드 축구대표팀</strong> 훈련 캠프 사용</div></article>
         <article class="card product-card"><a class="product-image" href="https://getkuhler.com/products/kuhler" target="_blank" rel="noopener noreferrer"><img src="https://getkuhler.com/cdn/shop/files/kuhler-22-small.jpg?crop=center&amp;height=700&amp;v=1773077888&amp;width=700" alt="Kühler 손바닥 냉각기를 손에 쥔 모습" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>Kühler</h3><p>휴대형 Palm Cooling</p></div><span class="product-type">파일럿</span></div><div class="fact"><strong>Tennis Australia National Tennis Academy</strong> 테스트</div></article>
         <article class="card product-card"><a class="product-image" href="https://getkyla.com/en-global/products/kyla-performance" target="_blank" rel="noopener noreferrer"><img src="https://getkyla.com/cdn/shop/files/kyla-performance-athlete-using-palm-cooling-device-between-sets_LR.jpg?v=1779198729&amp;width=1200" alt="선수가 양손에 든 KYLA Performance 손바닥 냉각 핸들" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>KYLA</h3><p>Palm Cooling 장치</p></div><span class="product-type">프로토타입</span></div><div class="fact">보고서에 Djokovic 경기 사용 사례 기재</div></article>
-        <article class="card product-card"><a class="product-image" href="https://www.apexcoollabs.com/products/narwhals-palm-cooling-device" target="_blank" rel="noopener noreferrer"><img src="https://cdn.prod.website-files.com/668304c4970bf4f404db5d51/69bc81387a7bacc82b496e6f_Apex%20Cool%20Labs%20Narwhals%20Pair%20Full%20Set.jpg" alt="Apex Cool Labs Narwhals 손바닥 냉각 장치 세트" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>Apex Cool Labs</h3><p>Narwhals</p></div><span class="product-type">패시브</span></div><div class="fact">프로스포츠 활용 사례</div></article>
+        <article class="card product-card"><a class="product-image" href="https://www.apexcoollabs.com/products/narwhals-palm-cooling-device" target="_blank" rel="noopener noreferrer"><img src="https://cdn.prod.website-files.com/668304c4970bf4f404db5d51/69b2c2707bb0fc172e881628_Narwhal1.jpg" alt="Apex Cool Labs Narwhals 손바닥 냉각 장치" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>Apex Cool Labs</h3><p>Narwhals</p></div><span class="product-type">패시브</span></div><div class="fact">프로스포츠 활용 사례</div></article>
         <article class="card product-card"><a class="product-image" href="https://www.avacooling.com/products/af-charge-bar" target="_blank" rel="noopener noreferrer"><img src="https://www.avacooling.com/cdn/shop/files/PXL-20230904_135424635.PORTRAIT.jpg?v=1696609540&amp;width=900" alt="AVA Cooling AF Charge Bar 제품 사진" loading="lazy" decoding="async"></a><div class="product-top"><div><h3>AVA Cooling</h3><p>AF Charge Bar</p></div><span class="product-type">간편형</span></div><div class="fact">단순 냉각 바 구조</div></article>
       </div>
     </section>
